@@ -16,76 +16,67 @@
                         <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Enter your details" textAlignment="center" lineBreakMode="wordWrap" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="njg-By-YCP">
-                                <rect key="frame" x="32" y="104" width="256" height="19.5"/>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Enter your details" lineBreakMode="wordWrap" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="njg-By-YCP">
+                                <rect key="frame" x="32" y="350.5" width="256" height="19.5"/>
                                 <fontDescription key="fontDescription" type="boldSystem" pointSize="16"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Name" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="Hx5-Vu-awy">
-                                <rect key="frame" x="32" y="187.5" width="256" height="34"/>
+                                <rect key="frame" x="32" y="402" width="256" height="34"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits"/>
                             </textField>
                             <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Email" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="h0a-Fb-5sH">
-                                <rect key="frame" x="32" y="253.5" width="256" height="34"/>
+                                <rect key="frame" x="32" y="452" width="256" height="34"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits"/>
                             </textField>
                             <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Address" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="A6V-vp-R7f">
-                                <rect key="frame" x="32" y="319.5" width="256" height="34"/>
+                                <rect key="frame" x="32" y="502" width="256" height="34"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits"/>
                             </textField>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="XFM-X4-oFN">
-                                <rect key="frame" x="80" y="417.5" width="160" height="36"/>
-                                <color key="backgroundColor" systemColor="systemTealColor"/>
-                                <constraints>
-                                    <constraint firstAttribute="width" constant="160" id="8jk-JK-T3L"/>
-                                    <constraint firstAttribute="height" constant="36" id="qzM-Gb-znD"/>
-                                </constraints>
-                                <state key="normal" title="Button"/>
-                                <buttonConfiguration key="configuration" style="plain" title="Save &amp; Proceed">
-                                    <color key="baseForegroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                </buttonConfiguration>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="-1" estimatedSectionHeaderHeight="-1" sectionFooterHeight="-1" estimatedSectionFooterHeight="-1" translatesAutoresizingMaskIntoConstraints="NO" id="0Wp-cD-aOF">
+                                <rect key="frame" x="0.0" y="44" width="320" height="292"/>
+                                <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                                 <connections>
-                                    <action selector="proceed:" destination="BYZ-38-t0r" eventType="touchUpInside" id="vXw-KH-UTi"/>
+                                    <outlet property="dataSource" destination="BYZ-38-t0r" id="ESm-S2-0Xm"/>
+                                    <outlet property="delegate" destination="BYZ-38-t0r" id="z92-AM-kcx"/>
                                 </connections>
-                            </button>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="9cJ-P7-QDX">
-                                <rect key="frame" x="93" y="461.5" width="134" height="31"/>
-                                <state key="normal" title="Button"/>
-                                <buttonConfiguration key="configuration" style="plain" title="skip &amp; show data"/>
-                                <connections>
-                                    <action selector="showData:" destination="BYZ-38-t0r" eventType="touchUpInside" id="ZmO-es-mVx"/>
-                                </connections>
-                            </button>
+                            </tableView>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                         <color key="backgroundColor" red="0.7803921568627451" green="0.77544094020617782" blue="0.70323700960978386" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <constraints>
-                            <constraint firstItem="njg-By-YCP" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" constant="60" id="31V-nF-NFf"/>
-                            <constraint firstItem="XFM-X4-oFN" firstAttribute="top" secondItem="A6V-vp-R7f" secondAttribute="bottom" constant="64" id="6rd-5n-BFO"/>
-                            <constraint firstItem="XFM-X4-oFN" firstAttribute="centerX" secondItem="6Tk-OE-BBY" secondAttribute="centerX" id="BjO-0Q-UAd"/>
-                            <constraint firstItem="A6V-vp-R7f" firstAttribute="top" secondItem="h0a-Fb-5sH" secondAttribute="bottom" constant="32" id="GKB-d4-ERI"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="0Wp-cD-aOF" secondAttribute="trailing" id="CRq-8b-vYw"/>
+                            <constraint firstItem="A6V-vp-R7f" firstAttribute="top" secondItem="h0a-Fb-5sH" secondAttribute="bottom" constant="16" id="GKB-d4-ERI"/>
                             <constraint firstItem="A6V-vp-R7f" firstAttribute="leading" secondItem="h0a-Fb-5sH" secondAttribute="leading" id="H41-Ni-uz5"/>
                             <constraint firstItem="njg-By-YCP" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="32" id="LAD-h7-CsR"/>
                             <constraint firstItem="h0a-Fb-5sH" firstAttribute="leading" secondItem="Hx5-Vu-awy" secondAttribute="leading" id="MHU-Qr-YNP"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="bottom" secondItem="A6V-vp-R7f" secondAttribute="bottom" constant="32" id="TkC-mL-Baa"/>
+                            <constraint firstItem="njg-By-YCP" firstAttribute="top" secondItem="0Wp-cD-aOF" secondAttribute="bottom" constant="14.5" id="ao5-vT-6ym"/>
                             <constraint firstItem="Hx5-Vu-awy" firstAttribute="trailing" secondItem="njg-By-YCP" secondAttribute="trailing" id="cK2-P6-Ps5"/>
                             <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="njg-By-YCP" secondAttribute="trailing" constant="32" id="cZH-rL-dRh"/>
                             <constraint firstItem="A6V-vp-R7f" firstAttribute="trailing" secondItem="h0a-Fb-5sH" secondAttribute="trailing" id="gqb-Ca-ced"/>
                             <constraint firstItem="Hx5-Vu-awy" firstAttribute="leading" secondItem="njg-By-YCP" secondAttribute="leading" id="i9A-8g-8B0"/>
                             <constraint firstItem="h0a-Fb-5sH" firstAttribute="trailing" secondItem="Hx5-Vu-awy" secondAttribute="trailing" id="mi0-jN-VOL"/>
-                            <constraint firstItem="9cJ-P7-QDX" firstAttribute="top" secondItem="XFM-X4-oFN" secondAttribute="bottom" constant="8" id="nk4-t0-l9S"/>
-                            <constraint firstItem="Hx5-Vu-awy" firstAttribute="top" secondItem="njg-By-YCP" secondAttribute="bottom" constant="64" id="p0c-2F-KYF"/>
-                            <constraint firstItem="h0a-Fb-5sH" firstAttribute="top" secondItem="Hx5-Vu-awy" secondAttribute="bottom" constant="32" id="rOA-JS-666"/>
-                            <constraint firstItem="9cJ-P7-QDX" firstAttribute="centerX" secondItem="6Tk-OE-BBY" secondAttribute="centerX" id="tnx-3Y-Fpo"/>
+                            <constraint firstItem="0Wp-cD-aOF" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" id="oE9-RJ-7II"/>
+                            <constraint firstItem="Hx5-Vu-awy" firstAttribute="top" secondItem="njg-By-YCP" secondAttribute="bottom" constant="32" id="p0c-2F-KYF"/>
+                            <constraint firstItem="h0a-Fb-5sH" firstAttribute="top" secondItem="Hx5-Vu-awy" secondAttribute="bottom" constant="16" id="rOA-JS-666"/>
+                            <constraint firstItem="0Wp-cD-aOF" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" id="uC0-61-xDj"/>
                         </constraints>
                     </view>
-                    <navigationItem key="navigationItem" id="cZ3-py-dVp"/>
+                    <navigationItem key="navigationItem" id="cZ3-py-dVp">
+                        <barButtonItem key="rightBarButtonItem" style="plain" systemItem="save" id="hzd-qX-C3L">
+                            <connections>
+                                <action selector="save:" destination="BYZ-38-t0r" id="oVf-dx-vO4"/>
+                            </connections>
+                        </barButtonItem>
+                    </navigationItem>
                     <connections>
-                        <outlet property="btnProcced" destination="XFM-X4-oFN" id="xaf-3J-sJC"/>
-                        <outlet property="btnShowData" destination="9cJ-P7-QDX" id="v1q-kJ-RK8"/>
+                        <outlet property="btnSave" destination="hzd-qX-C3L" id="KyH-Bx-pMZ"/>
+                        <outlet property="tblView" destination="0Wp-cD-aOF" id="uFd-ng-TIg"/>
                         <outlet property="txtAddress" destination="A6V-vp-R7f" id="6vj-1q-fI6"/>
                         <outlet property="txtMail" destination="h0a-Fb-5sH" id="qQM-09-OHi"/>
                         <outlet property="txtName" destination="Hx5-Vu-awy" id="Ccr-RZ-XhK"/>
@@ -160,9 +151,6 @@
     <resources>
         <systemColor name="systemBackgroundColor">
             <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-        </systemColor>
-        <systemColor name="systemTealColor">
-            <color red="0.18823529411764706" green="0.69019607843137254" blue="0.7803921568627451" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </systemColor>
     </resources>
 </document>

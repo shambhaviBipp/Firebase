@@ -92,11 +92,13 @@ PODS:
   - nanopb/decode (2.30908.0)
   - nanopb/encode (2.30908.0)
   - PromisesObjC (2.0.0)
+  - SVProgressHUD (2.2.5)
   - Toast-Swift (5.0.1)
 
 DEPENDENCIES:
   - Firebase/Core
   - Firebase/Database
+  - SVProgressHUD
   - Toast-Swift
 
 SPEC REPOS:
@@ -113,6 +115,7 @@ SPEC REPOS:
     - leveldb-library
     - nanopb
     - PromisesObjC
+    - SVProgressHUD
     - Toast-Swift
 
 SPEC CHECKSUMS:
@@ -128,8 +131,9 @@ SPEC CHECKSUMS:
   leveldb-library: 50c7b45cbd7bf543c81a468fe557a16ae3db8729
   nanopb: a0ba3315591a9ae0a16a309ee504766e90db0c96
   PromisesObjC: 68159ce6952d93e17b2dfe273b8c40907db5ba58
+  SVProgressHUD: 1428aafac632c1f86f62aa4243ec12008d7a51d6
   Toast-Swift: 9b6a70f28b3bf0b96c40d46c0c4b9d6639846711
 
-PODFILE CHECKSUM: 8c14727040649e42f2a8a85d65c406837f039222
+PODFILE CHECKSUM: 92d3bd4422c4a1c318c5e205855084d2f61d23e5
 
 COCOAPODS: 1.11.2
