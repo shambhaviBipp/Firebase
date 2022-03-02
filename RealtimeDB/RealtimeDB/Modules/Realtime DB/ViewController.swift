@@ -8,36 +8,28 @@
 import UIKit
 
 class ViewController: UIViewController {
-
-//    @IBOutlet weak var btnShowData: UIButton!
-//    @IBOutlet weak var btnSave: UIButton!
+    
     @IBOutlet weak var btnSave: UIBarButtonItem!
     @IBOutlet weak var txtAddress: UITextField!
     @IBOutlet weak var txtMail: UITextField!
     @IBOutlet weak var tblView: UITableView!
     @IBOutlet weak var txtName: UITextField!
     
-    var dataModel = [UsersData]()
     var viewModel = RealTimeDBViewModel()
     
     override func viewDidLoad() {
         super.viewDidLoad()
-//      btnProcced.layer.cornerRadius = 8
         txtMail.delegate = self
         txtName.delegate = self
         txtAddress.delegate = self
         registerCell()
-        getData()
+        getData(record: "all")
+        
     }
 
     
     override func viewWillAppear(_ animated: Bool) {
-        if #available(iOS 15, *) {
-                let appearance = UINavigationBarAppearance()
-                appearance.configureWithOpaqueBackground()
-            navigationController?.navigationBar.standardAppearance = appearance;
-            navigationController?.navigationBar.scrollEdgeAppearance = navigationController?.navigationBar.standardAppearance
-            }
+        navigation()
     }
     
     func registerCell(){
@@ -56,7 +48,7 @@ class ViewController: UIViewController {
                 self.viewModel.saveData(name: self.txtName.text!, mail: self.txtMail.text!, address: self.txtAddress.text!) { result in
                     if result == "suceess"{
                         self.stopLoader()
-                        self.getData()
+                        self.getData(record: "last")
                     }else{
                         self.stopLoader()
                         self.view.makeToast("Something went wrong! Please try again later!!")
@@ -68,15 +60,10 @@ class ViewController: UIViewController {
     }
     
     
-    func getData(){
+    func getData(record: String){
         startLoader()
-        self.viewModel.getData { result in
+        self.viewModel.getData(record: record){ result in
             if result != nil{
-                for data in result ?? []{
-                    if let dict = data.value as? [String: String]{
-                        self.dataModel.append(UsersData(name: dict["Name"] ?? "-", mail: dict["Email"] ?? "-", address: dict["Address"] ?? "-"))
-                    }
-                }
                 self.stopLoader()
                 self.txtMail.text = ""
                 self.txtName.text = ""
@@ -91,12 +78,6 @@ class ViewController: UIViewController {
             
         }
     }
-
-//    @IBAction func showData(_ sender: Any) {
-//        let storyboard1 = UIStoryboard(name: "Main", bundle: nil)
-//        let vc = storyboard1.instantiateViewController(withIdentifier: "DisplayRTDataVC")
-//        self.navigationController?.pushViewController(vc, animated: true)
-//    }
 }
 
 extension ViewController: UITextFieldDelegate{
@@ -108,12 +89,12 @@ extension ViewController: UITextFieldDelegate{
 
 extension ViewController: UITableViewDelegate, UITableViewDataSource{
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return dataModel.count
+        return viewModel.dataModel.count
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cell = tblView.dequeueReusableCell(withIdentifier: "RTDataCell") as! RTDataCell
-        cell.bindData(data: dataModel[indexPath.row])
+        guard let cell = tblView.dequeueReusableCell(withIdentifier: "RTDataCell") as? RTDataCell else {return UITableViewCell()}
+        cell.bindData(data: viewModel.dataModel[indexPath.row])
         return cell
     }
 }

@@ -18,9 +18,7 @@ extension UIViewController{
     func stopLoader() {
         SVProgressHUD.dismiss()
     }
-}
-
-extension UINavigationController{
+    
     func navigation(){
         if #available(iOS 15, *) {
                 let appearance = UINavigationBarAppearance()

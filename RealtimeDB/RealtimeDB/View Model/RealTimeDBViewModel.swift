@@ -11,6 +11,7 @@ import Firebase
 
 class RealTimeDBViewModel {
     
+    var dataModel = [UsersData]()
     let db = Database.database().reference()
     
     func saveData(name: String, mail: String, address: String, completion: @escaping (_ result: String?) -> Void ){
@@ -25,16 +26,42 @@ class RealTimeDBViewModel {
         
     }
     
-    func getData(completion: @escaping (_ result: [DataSnapshot]?) -> Void){
-        db.child("Data").observe(.value) { data in
-            if let users = data.children.allObjects as? [DataSnapshot]{
-                if users.count != 0{
-                    completion(users)
-                }else{
-                    completion(nil)
+    
+    func getData(record: String, completion: @escaping (_ result: [UsersData]?) -> Void){
+        if record == "all"{
+            db.child("Data").observeSingleEvent(of: .value) { data in
+                self.dataModel.removeAll()
+                if let users = data.children.allObjects as? [DataSnapshot]{
+                    if users.count != 0{
+                        for data in users{
+                            if let dict = data.value as? [String: String]{
+                                self.dataModel.append(UsersData(name: dict["Name"] ?? "-", mail: dict["Email"] ?? "-", address: dict["Address"] ?? "-"))
+                            }
+                        }
+                        completion(self.dataModel)
+                    }else{
+                        completion(nil)
+                    }
                 }
             }
+        }else if record == "last"{
+            db.child("Data").queryLimited(toLast: 1).observeSingleEvent(of: .value) { data in
+                if let users = data.children.allObjects as? [DataSnapshot]{
+                    if users.count != 0{
+                        for data in users{
+                            if let dict = data.value as? [String: String]{
+                                self.dataModel.append(UsersData(name: dict["Name"] ?? "-", mail: dict["Email"] ?? "-", address: dict["Address"] ?? "-"))
+                            }
+                        }
+                        completion(self.dataModel)
+                    }else{
+                        completion(nil)
+                    }
+                }
+            }
+
         }
+        
     }
     
 }
