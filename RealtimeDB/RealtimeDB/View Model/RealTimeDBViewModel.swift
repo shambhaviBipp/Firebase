@@ -38,7 +38,6 @@ class RealTimeDBViewModel {
                                 self.dataModel.append(UsersData(name: dict["Name"] ?? "-", mail: dict["Email"] ?? "-", address: dict["Address"] ?? "-"))
                             }
                         }
-                        
                         print(self.dataModel)
                         completion(self.dataModel)
                     }else{

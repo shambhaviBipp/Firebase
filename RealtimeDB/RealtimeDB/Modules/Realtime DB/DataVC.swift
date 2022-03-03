@@ -31,8 +31,9 @@ class DataVC: UIViewController {
             getRealtimeData(record: "all")
         }else if type == "firestore"{
             self.navigationItem.title = "Firestore"
-            firestoreVM.getDataUsingListner()
+           // firestoreVM.getDataUsingListner()
            // getfirestore(record: "all")
+            geFirestoreListner()
         }
     }
 
@@ -65,7 +66,7 @@ class DataVC: UIViewController {
                     firestoreVM.addFirestoreData(name: txtName.text!, mail: txtMail.text!, address: txtAddress.text!) { result in
                         if result == "success"{
                             self.stopLoader()
-                            self.getfirestore(record: "latest")
+                            //self.getfirestore(record: "latest")
                         }else{
                             self.stopLoader()
                             self.view.makeToast("Something went wrong! Please try again later!!")
@@ -97,6 +98,23 @@ class DataVC: UIViewController {
     func getfirestore(record: String){
         startLoader()
         self.firestoreVM.getFireStoreData(record: record){ result in
+            if result != nil{
+                self.stopLoader()
+                self.txtMail.text = ""
+                self.txtName.text = ""
+                self.txtAddress.text = ""
+                self.tblView.isHidden = false
+                self.tblView.reloadData()
+            }else{
+                self.stopLoader()
+                self.tblView.isHidden = true
+                self.view.makeToast("Data not found")
+            }
+        }
+    }
+    
+    func geFirestoreListner(){
+        self.firestoreVM.getDataUsingListner { result in
             if result != nil{
                 self.stopLoader()
                 self.txtMail.text = ""

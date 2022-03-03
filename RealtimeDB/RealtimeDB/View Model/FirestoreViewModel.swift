@@ -17,7 +17,7 @@ class FirestoreViewModel {
     func addFirestoreData(name: String, mail: String, address: String, completion: @escaping (_ result: String?) -> Void ){
         
         var ref: DocumentReference? = nil
-        ref = db.collection("Data1").addDocument(data: [
+        ref = db.collection("Data2").addDocument(data: [
             "Name": name,
             "Mail": mail,
             "Address": address,
@@ -33,24 +33,30 @@ class FirestoreViewModel {
         
     }
     
+    func getDataUsingListner(completion: @escaping (_ result: [UsersData]?) -> Void){
+        db.collection("Data2").addSnapshotListener { documentSnapshot, error in
+            guard let document = documentSnapshot else {
+                print("Error fetching document: \(error!)")
+                completion(nil)
+                return
+              }
+            document.documentChanges.forEach { data in
+                if (data.type == .added) {
+                    print("New data: \(data.document.data())")
+                    let doc = data.document.data()
+                    self.dataModel.append(UsersData(name: doc["Name"] as? String ?? "-", mail: doc["Mail"] as? String ?? "-", address: doc["Address"] as? String ?? "-"))
+                }else if (data.type == .modified) {
+                    print("Modified data: \(data.document.data())")
+                }else if (data.type == .removed) {
+                    print("Removed data: \(data.document.data())")
+                }
+                }
+            completion(self.dataModel)
+        }
+    }
     
-//    func getDataUsingListner(){
-//        db.collection("Data1").addSnapshotListener { documentSnapshot, error in
-//            guard let document = documentSnapshot?.documents else {
-//                print("Error fetching document: \(error!)")
-//                return
-//              }
-//            let data = document
-//              print("Current data: \(data)")
-//            
-//            for document in data{
-//                let  x = document.data()
-//                print(x["Name"])
-//            }
-//            }
-//    }
     
-    
+
     func getFireStoreData(record: String, completion: @escaping (_ result: [UsersData]?) -> Void){
         if record == "all"{
             db.collection("Data1").order(by: "Id").getDocuments() { (querySnapshot, err) in
