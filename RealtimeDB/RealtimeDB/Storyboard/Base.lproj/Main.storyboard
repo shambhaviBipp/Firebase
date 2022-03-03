@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="19529" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="sFl-bW-JDt">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="19529" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="khk-g3-GBd">
     <device id="retina4_0" orientation="portrait" appearance="light"/>
     <dependencies>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="19519"/>
@@ -8,10 +8,10 @@
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
-        <!--View Controller-->
+        <!--DataVC-->
         <scene sceneID="tne-QT-ifu">
             <objects>
-                <viewController id="BYZ-38-t0r" customClass="ViewController" customModule="RealtimeDB" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="DataVC" useStoryboardIdentifierAsRestorationIdentifier="YES" id="BYZ-38-t0r" customClass="DataVC" customModule="RealtimeDB" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
                         <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -84,50 +84,65 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="988.125" y="71.83098591549296"/>
+            <point key="canvasLocation" x="1985.625" y="71.83098591549296"/>
         </scene>
-        <!--DisplayRT DataVC-->
+        <!--View Controller-->
         <scene sceneID="ORN-WW-6PX">
             <objects>
-                <viewController storyboardIdentifier="DisplayRTDataVC" useStoryboardIdentifierAsRestorationIdentifier="YES" id="P3d-pt-ZFR" customClass="DisplayRTDataVC" customModule="RealtimeDB" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="ViewController" useStoryboardIdentifierAsRestorationIdentifier="YES" id="P3d-pt-ZFR" customClass="ViewController" customModule="RealtimeDB" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="rUZ-o1-i3O">
                         <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Data" lineBreakMode="wordWrap" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Iam-3N-rg7">
-                                <rect key="frame" x="32" y="60" width="256" height="19.5"/>
-                                <fontDescription key="fontDescription" type="boldSystem" pointSize="16"/>
-                                <nil key="textColor"/>
-                                <nil key="highlightedColor"/>
-                            </label>
-                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="-1" estimatedSectionHeaderHeight="-1" sectionFooterHeight="-1" estimatedSectionFooterHeight="-1" translatesAutoresizingMaskIntoConstraints="NO" id="54g-dK-NYp">
-                                <rect key="frame" x="0.0" y="111.5" width="320" height="456.5"/>
-                                <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="KbL-0p-4P2">
+                                <rect key="frame" x="83.5" y="248" width="153" height="36"/>
+                                <color key="backgroundColor" red="0.6867397769611111" green="0.77948436313009439" blue="0.93405639019209086" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="153" id="rLG-Xj-iSS"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="system" pointSize="20"/>
+                                <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
+                                <state key="normal" title="Realtime ">
+                                    <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                </state>
                                 <connections>
-                                    <outlet property="dataSource" destination="P3d-pt-ZFR" id="tk2-vo-9nd"/>
-                                    <outlet property="delegate" destination="P3d-pt-ZFR" id="6ic-07-Hga"/>
+                                    <action selector="realTime:" destination="P3d-pt-ZFR" eventType="touchUpInside" id="Lci-FL-ynX"/>
                                 </connections>
-                            </tableView>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="BNt-r0-egk">
+                                <rect key="frame" x="83.5" y="316" width="153" height="36"/>
+                                <color key="backgroundColor" red="0.686739777" green="0.77948436310000002" blue="0.93405639019999998" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="153" id="QTQ-Nr-ekb"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="system" pointSize="20"/>
+                                <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
+                                <state key="normal" title="Firestrore">
+                                    <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                </state>
+                                <connections>
+                                    <action selector="fireStore:" destination="P3d-pt-ZFR" eventType="touchUpInside" id="Z5w-pU-6vE"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="FVa-sN-fOb"/>
                         <color key="backgroundColor" red="0.78039215689999997" green="0.77544094019999998" blue="0.70323700960000002" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <constraints>
-                            <constraint firstItem="54g-dK-NYp" firstAttribute="top" secondItem="Iam-3N-rg7" secondAttribute="bottom" constant="32" id="2mv-IK-BLK"/>
-                            <constraint firstItem="Iam-3N-rg7" firstAttribute="top" secondItem="FVa-sN-fOb" secondAttribute="top" constant="60" id="2yh-xw-hAE"/>
-                            <constraint firstItem="FVa-sN-fOb" firstAttribute="trailing" secondItem="54g-dK-NYp" secondAttribute="trailing" id="Bkb-pN-TZP"/>
-                            <constraint firstItem="Iam-3N-rg7" firstAttribute="leading" secondItem="FVa-sN-fOb" secondAttribute="leading" constant="32" id="Mf1-qu-nhY"/>
-                            <constraint firstItem="54g-dK-NYp" firstAttribute="leading" secondItem="FVa-sN-fOb" secondAttribute="leading" id="hv3-fK-LeK"/>
-                            <constraint firstItem="FVa-sN-fOb" firstAttribute="bottom" secondItem="54g-dK-NYp" secondAttribute="bottom" id="iYP-gH-riq"/>
-                            <constraint firstItem="FVa-sN-fOb" firstAttribute="trailing" secondItem="Iam-3N-rg7" secondAttribute="trailing" constant="32" id="ke3-Ld-l8Z"/>
+                            <constraint firstItem="KbL-0p-4P2" firstAttribute="centerX" secondItem="FVa-sN-fOb" secondAttribute="centerX" id="G68-rJ-jga"/>
+                            <constraint firstItem="BNt-r0-egk" firstAttribute="centerX" secondItem="FVa-sN-fOb" secondAttribute="centerX" id="SEH-xb-3u4"/>
+                            <constraint firstItem="BNt-r0-egk" firstAttribute="top" secondItem="KbL-0p-4P2" secondAttribute="bottom" constant="32" id="UAz-5M-C2L"/>
+                            <constraint firstItem="KbL-0p-4P2" firstAttribute="centerY" secondItem="FVa-sN-fOb" secondAttribute="centerY" constant="-40" id="nwH-mQ-1Qa"/>
                         </constraints>
                     </view>
+                    <navigationItem key="navigationItem" id="QFs-HT-D3c"/>
                     <connections>
-                        <outlet property="tblView" destination="54g-dK-NYp" id="WV3-Qp-lmg"/>
+                        <outlet property="btnFirestore" destination="BNt-r0-egk" id="erZ-JY-R3I"/>
+                        <outlet property="btnRealTime" destination="KbL-0p-4P2" id="d8G-IN-eWJ"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="8a0-5d-vnI" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1732.5" y="71.83098591549296"/>
+            <point key="canvasLocation" x="168.75" y="71.83098591549296"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="Xcw-kC-sXA">
@@ -145,7 +160,25 @@
                 </navigationController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="sAB-M6-qNn" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-9.375" y="71.83098591549296"/>
+            <point key="canvasLocation" x="988.125" y="71.83098591549296"/>
+        </scene>
+        <!--Navigation Controller-->
+        <scene sceneID="5qR-CY-oGe">
+            <objects>
+                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="khk-g3-GBd" sceneMemberID="viewController">
+                    <toolbarItems/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="4Cd-xt-gMU">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <nil name="viewControllers"/>
+                    <connections>
+                        <segue destination="P3d-pt-ZFR" kind="relationship" relationship="rootViewController" id="1S3-fJ-hYu"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="MH9-2B-N86" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-830.625" y="71.83098591549296"/>
         </scene>
     </scenes>
     <resources>

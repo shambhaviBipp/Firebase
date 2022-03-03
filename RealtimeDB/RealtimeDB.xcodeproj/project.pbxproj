@@ -10,6 +10,8 @@
 		170B8D034DB41945C808AE6A /* Pods_RealtimeDB.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 2DB3560460EE29CC7864011E /* Pods_RealtimeDB.framework */; };
 		845F6F0627CE62FE001DE267 /* RealTimeDBViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 845F6F0527CE62FE001DE267 /* RealTimeDBViewModel.swift */; };
 		84AE625E27CF47690050DDCA /* UIVIewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84AE625D27CF47690050DDCA /* UIVIewController.swift */; };
+		84AE626127CF82EC0050DDCA /* DataVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84AE626027CF82EC0050DDCA /* DataVC.swift */; };
+		84AE626327CF88930050DDCA /* FirestoreViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84AE626227CF88930050DDCA /* FirestoreViewModel.swift */; };
 		84E6775627CE13ED003C00A7 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84E6775527CE13ED003C00A7 /* AppDelegate.swift */; };
 		84E6775827CE13ED003C00A7 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84E6775727CE13ED003C00A7 /* SceneDelegate.swift */; };
 		84E6775A27CE13ED003C00A7 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84E6775927CE13ED003C00A7 /* ViewController.swift */; };
@@ -29,6 +31,8 @@
 		8074383ECFFFBD7D46FE2E9C /* Pods-RealtimeDB.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-RealtimeDB.release.xcconfig"; path = "Target Support Files/Pods-RealtimeDB/Pods-RealtimeDB.release.xcconfig"; sourceTree = "<group>"; };
 		845F6F0527CE62FE001DE267 /* RealTimeDBViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RealTimeDBViewModel.swift; sourceTree = "<group>"; };
 		84AE625D27CF47690050DDCA /* UIVIewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIVIewController.swift; sourceTree = "<group>"; };
+		84AE626027CF82EC0050DDCA /* DataVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DataVC.swift; sourceTree = "<group>"; };
+		84AE626227CF88930050DDCA /* FirestoreViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FirestoreViewModel.swift; sourceTree = "<group>"; };
 		84E6775227CE13ED003C00A7 /* RealtimeDB.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = RealtimeDB.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		84E6775527CE13ED003C00A7 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		84E6775727CE13ED003C00A7 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -120,6 +124,7 @@
 			isa = PBXGroup;
 			children = (
 				845F6F0527CE62FE001DE267 /* RealTimeDBViewModel.swift */,
+				84AE626227CF88930050DDCA /* FirestoreViewModel.swift */,
 			);
 			path = "View Model";
 			sourceTree = "<group>";
@@ -154,6 +159,7 @@
 				84E6777A27CE1ECE003C00A7 /* Cell */,
 				84E6775927CE13ED003C00A7 /* ViewController.swift */,
 				84E6777827CE1EC6003C00A7 /* DisplayRTDataVC.swift */,
+				84AE626027CF82EC0050DDCA /* DataVC.swift */,
 			);
 			path = "Realtime DB";
 			sourceTree = "<group>";
@@ -305,7 +311,9 @@
 				84E6777927CE1EC6003C00A7 /* DisplayRTDataVC.swift in Sources */,
 				84E6777D27CE1EE8003C00A7 /* RTDataCell.swift in Sources */,
 				84E6775627CE13ED003C00A7 /* AppDelegate.swift in Sources */,
+				84AE626127CF82EC0050DDCA /* DataVC.swift in Sources */,
 				84E6775827CE13ED003C00A7 /* SceneDelegate.swift in Sources */,
+				84AE626327CF88930050DDCA /* FirestoreViewModel.swift in Sources */,
 				84E6778027CE21E8003C00A7 /* Users.swift in Sources */,
 				84AE625E27CF47690050DDCA /* UIVIewController.swift in Sources */,
 				845F6F0627CE62FE001DE267 /* RealTimeDBViewModel.swift in Sources */,
