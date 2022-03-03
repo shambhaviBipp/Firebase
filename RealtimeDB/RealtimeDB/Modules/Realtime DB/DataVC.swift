@@ -31,7 +31,8 @@ class DataVC: UIViewController {
             getRealtimeData(record: "all")
         }else if type == "firestore"{
             self.navigationItem.title = "Firestore"
-            getfirestore(record: "all")
+            firestoreVM.getDataUsingListner()
+           // getfirestore(record: "all")
         }
     }
 

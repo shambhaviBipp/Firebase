@@ -34,6 +34,22 @@ class FirestoreViewModel {
     }
     
     
+//    func getDataUsingListner(){
+//        db.collection("Data1").addSnapshotListener { documentSnapshot, error in
+//            guard let document = documentSnapshot?.documents else {
+//                print("Error fetching document: \(error!)")
+//                return
+//              }
+//            let data = document
+//              print("Current data: \(data)")
+//            
+//            for document in data{
+//                let  x = document.data()
+//                print(x["Name"])
+//            }
+//            }
+//    }
+    
     
     func getFireStoreData(record: String, completion: @escaping (_ result: [UsersData]?) -> Void){
         if record == "all"{
