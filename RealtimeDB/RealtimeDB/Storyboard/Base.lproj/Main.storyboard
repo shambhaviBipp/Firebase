@@ -96,7 +96,7 @@
                         <subviews>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="KbL-0p-4P2">
                                 <rect key="frame" x="83.5" y="248" width="153" height="36"/>
-                                <color key="backgroundColor" red="0.6867397769611111" green="0.77948436313009439" blue="0.93405639019209086" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <color key="backgroundColor" red="0.58282344036656275" green="0.73227143194633881" blue="0.88022220257631278" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <constraints>
                                     <constraint firstAttribute="width" constant="153" id="rLG-Xj-iSS"/>
                                 </constraints>
@@ -111,7 +111,7 @@
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="BNt-r0-egk">
                                 <rect key="frame" x="83.5" y="316" width="153" height="36"/>
-                                <color key="backgroundColor" red="0.686739777" green="0.77948436310000002" blue="0.93405639019999998" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <color key="backgroundColor" red="0.5828234404" green="0.73227143189999999" blue="0.88022220259999995" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <constraints>
                                     <constraint firstAttribute="width" constant="153" id="QTQ-Nr-ekb"/>
                                 </constraints>
