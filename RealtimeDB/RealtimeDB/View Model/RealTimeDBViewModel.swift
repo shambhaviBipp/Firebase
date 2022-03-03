@@ -16,7 +16,7 @@ class RealTimeDBViewModel {
     
     func saveData(name: String, mail: String, address: String, completion: @escaping (_ result: String?) -> Void ){
         
-        db.child("Data").childByAutoId().setValue(["Name": name, "Email": mail, "Address": address]) { error, reference in
+        db.child("Data2").childByAutoId().setValue(["Name": name, "Email": mail, "Address": address]) { error, reference in
             if let _ = error {
                 completion("error")
             } else {
@@ -29,7 +29,7 @@ class RealTimeDBViewModel {
     
     func getRealtimeData(record: String, completion: @escaping (_ result: [UsersData]?) -> Void){
         if record == "all"{
-            db.child("Data").observeSingleEvent(of: .value) { data in
+            db.child("Data1").observeSingleEvent(of: .value) { data in
                 self.dataModel.removeAll()
                 if let users = data.children.allObjects as? [DataSnapshot]{
                     if users.count != 0{
@@ -46,7 +46,7 @@ class RealTimeDBViewModel {
                 }
             }
         }else if record == "latest"{
-            db.child("Data").queryLimited(toLast: 1).observeSingleEvent(of: .value) { data in
+            db.child("Data1").queryLimited(toLast: 1).observeSingleEvent(of: .value) { data in
                 if let users = data.children.allObjects as? [DataSnapshot]{
                     if users.count != 0{
                         for data in users{
@@ -64,5 +64,20 @@ class RealTimeDBViewModel {
         }
         
     }
+    
+    
+    func getDataUsingListner(completion: @escaping (_ result: [UsersData]?) -> Void){
+        db.child("Data2").observe(.childAdded) { data in
+            
+            guard let dict = data.value as? [String: String] else{
+                completion(nil)
+                return
+            }
+            self.dataModel.append(UsersData(name: dict["Name"] ?? "-", mail: dict["Email"] ?? "-", address: dict["Address"] ?? "-"))
+            completion(self.dataModel)
+        }
+    }
+    
+ 
     
 }

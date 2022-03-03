@@ -28,7 +28,8 @@ class DataVC: UIViewController {
         
         if type == "realtime"{
             self.navigationItem.title = "Realtime"
-            getRealtimeData(record: "all")
+            //getRealtimeData(record: "all")
+            getRealTimeLister()
         }else if type == "firestore"{
             self.navigationItem.title = "Firestore"
            // firestoreVM.getDataUsingListner()
@@ -56,7 +57,7 @@ class DataVC: UIViewController {
                     self.viewModel.saveData(name: self.txtName.text!, mail: self.txtMail.text!, address: self.txtAddress.text!) { result in
                             if result == "suceess"{
                                 self.stopLoader()
-                                self.getRealtimeData(record: "latest")
+                                //self.getRealtimeData(record: "latest")
                             }else{
                                 self.stopLoader()
                                 self.view.makeToast("Something went wrong! Please try again later!!")
@@ -127,6 +128,25 @@ class DataVC: UIViewController {
                 self.tblView.isHidden = true
                 self.view.makeToast("Data not found")
             }
+        }
+    }
+    
+    func getRealTimeLister(){
+        startLoader()
+        self.viewModel.getDataUsingListner{ result in
+            if result != nil{
+                self.stopLoader()
+                self.txtMail.text = ""
+                self.txtName.text = ""
+                self.txtAddress.text = ""
+                self.tblView.isHidden = false
+                self.tblView.reloadData()
+            }else{
+                self.stopLoader()
+                self.tblView.isHidden = true
+                self.view.makeToast("Data not found")
+            }
+            
         }
     }
 }
