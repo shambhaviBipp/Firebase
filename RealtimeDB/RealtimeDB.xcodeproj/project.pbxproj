@@ -8,7 +8,16 @@
 
 /* Begin PBXBuildFile section */
 		170B8D034DB41945C808AE6A /* Pods_RealtimeDB.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 2DB3560460EE29CC7864011E /* Pods_RealtimeDB.framework */; };
+		843C4B8C27D0FAA400428CBA /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 843C4B8B27D0FAA400428CBA /* GoogleService-Info.plist */; };
+		843C4B8F27D0FB7800428CBA /* ChatVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 843C4B8E27D0FB7800428CBA /* ChatVC.swift */; };
+		843C4B9127D0FB8C00428CBA /* ChatTypeVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 843C4B9027D0FB8C00428CBA /* ChatTypeVC.swift */; };
+		845BAFEF27D1D03C0058593A /* chatViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 845BAFEE27D1D03C0058593A /* chatViewModel.swift */; };
+		845BAFF527D1EC910058593A /* senderMessageCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 845BAFF327D1EC910058593A /* senderMessageCell.swift */; };
+		845BAFF627D1EC910058593A /* senderMessageCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 845BAFF427D1EC910058593A /* senderMessageCell.xib */; };
+		845BAFF927D1ECA60058593A /* ReceiverMesssageCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 845BAFF727D1ECA60058593A /* ReceiverMesssageCell.swift */; };
+		845BAFFA27D1ECA60058593A /* ReceiverMesssageCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 845BAFF827D1ECA60058593A /* ReceiverMesssageCell.xib */; };
 		845F6F0627CE62FE001DE267 /* RealTimeDBViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 845F6F0527CE62FE001DE267 /* RealTimeDBViewModel.swift */; };
+		8474DD9C27D0C26700FE8129 /* chat.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 8474DD9B27D0C26700FE8129 /* chat.storyboard */; };
 		84AE625E27CF47690050DDCA /* UIVIewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84AE625D27CF47690050DDCA /* UIVIewController.swift */; };
 		84AE626127CF82EC0050DDCA /* DataVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84AE626027CF82EC0050DDCA /* DataVC.swift */; };
 		84AE626327CF88930050DDCA /* FirestoreViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84AE626227CF88930050DDCA /* FirestoreViewModel.swift */; };
@@ -18,7 +27,6 @@
 		84E6775D27CE13ED003C00A7 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 84E6775B27CE13ED003C00A7 /* Main.storyboard */; };
 		84E6775F27CE13EF003C00A7 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 84E6775E27CE13EF003C00A7 /* Assets.xcassets */; };
 		84E6776227CE13EF003C00A7 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 84E6776027CE13EF003C00A7 /* LaunchScreen.storyboard */; };
-		84E6777627CE1DC7003C00A7 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 84E6777527CE1DC7003C00A7 /* GoogleService-Info.plist */; };
 		84E6777927CE1EC6003C00A7 /* DisplayRTDataVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84E6777827CE1EC6003C00A7 /* DisplayRTDataVC.swift */; };
 		84E6777D27CE1EE8003C00A7 /* RTDataCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84E6777B27CE1EE8003C00A7 /* RTDataCell.swift */; };
 		84E6777E27CE1EE8003C00A7 /* RTDataCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 84E6777C27CE1EE8003C00A7 /* RTDataCell.xib */; };
@@ -29,7 +37,16 @@
 		2DB3560460EE29CC7864011E /* Pods_RealtimeDB.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_RealtimeDB.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		33B067498924EA42F7AE6084 /* Pods-RealtimeDB.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-RealtimeDB.debug.xcconfig"; path = "Target Support Files/Pods-RealtimeDB/Pods-RealtimeDB.debug.xcconfig"; sourceTree = "<group>"; };
 		8074383ECFFFBD7D46FE2E9C /* Pods-RealtimeDB.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-RealtimeDB.release.xcconfig"; path = "Target Support Files/Pods-RealtimeDB/Pods-RealtimeDB.release.xcconfig"; sourceTree = "<group>"; };
+		843C4B8B27D0FAA400428CBA /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
+		843C4B8E27D0FB7800428CBA /* ChatVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChatVC.swift; sourceTree = "<group>"; };
+		843C4B9027D0FB8C00428CBA /* ChatTypeVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChatTypeVC.swift; sourceTree = "<group>"; };
+		845BAFEE27D1D03C0058593A /* chatViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = chatViewModel.swift; sourceTree = "<group>"; };
+		845BAFF327D1EC910058593A /* senderMessageCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = senderMessageCell.swift; sourceTree = "<group>"; };
+		845BAFF427D1EC910058593A /* senderMessageCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = senderMessageCell.xib; sourceTree = "<group>"; };
+		845BAFF727D1ECA60058593A /* ReceiverMesssageCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReceiverMesssageCell.swift; sourceTree = "<group>"; };
+		845BAFF827D1ECA60058593A /* ReceiverMesssageCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ReceiverMesssageCell.xib; sourceTree = "<group>"; };
 		845F6F0527CE62FE001DE267 /* RealTimeDBViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RealTimeDBViewModel.swift; sourceTree = "<group>"; };
+		8474DD9B27D0C26700FE8129 /* chat.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = chat.storyboard; sourceTree = "<group>"; };
 		84AE625D27CF47690050DDCA /* UIVIewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIVIewController.swift; sourceTree = "<group>"; };
 		84AE626027CF82EC0050DDCA /* DataVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DataVC.swift; sourceTree = "<group>"; };
 		84AE626227CF88930050DDCA /* FirestoreViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FirestoreViewModel.swift; sourceTree = "<group>"; };
@@ -41,7 +58,6 @@
 		84E6775E27CE13EF003C00A7 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		84E6776127CE13EF003C00A7 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		84E6776327CE13EF003C00A7 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		84E6777527CE1DC7003C00A7 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; name = "GoogleService-Info.plist"; path = "../../../../../Downloads/GoogleService-Info.plist"; sourceTree = "<group>"; };
 		84E6777827CE1EC6003C00A7 /* DisplayRTDataVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DisplayRTDataVC.swift; sourceTree = "<group>"; };
 		84E6777B27CE1EE8003C00A7 /* RTDataCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RTDataCell.swift; sourceTree = "<group>"; };
 		84E6777C27CE1EE8003C00A7 /* RTDataCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = RTDataCell.xib; sourceTree = "<group>"; };
@@ -60,6 +76,27 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		843C4B8D27D0FB5F00428CBA /* Chat */ = {
+			isa = PBXGroup;
+			children = (
+				845BAFF227D1EC6C0058593A /* Cell */,
+				843C4B8E27D0FB7800428CBA /* ChatVC.swift */,
+				843C4B9027D0FB8C00428CBA /* ChatTypeVC.swift */,
+			);
+			path = Chat;
+			sourceTree = "<group>";
+		};
+		845BAFF227D1EC6C0058593A /* Cell */ = {
+			isa = PBXGroup;
+			children = (
+				845BAFF327D1EC910058593A /* senderMessageCell.swift */,
+				845BAFF427D1EC910058593A /* senderMessageCell.xib */,
+				845BAFF727D1ECA60058593A /* ReceiverMesssageCell.swift */,
+				845BAFF827D1ECA60058593A /* ReceiverMesssageCell.xib */,
+			);
+			path = Cell;
+			sourceTree = "<group>";
+		};
 		84AE625C27CF47470050DDCA /* Extension */ = {
 			isa = PBXGroup;
 			children = (
@@ -124,6 +161,7 @@
 			isa = PBXGroup;
 			children = (
 				845F6F0527CE62FE001DE267 /* RealTimeDBViewModel.swift */,
+				845BAFEE27D1D03C0058593A /* chatViewModel.swift */,
 				84AE626227CF88930050DDCA /* FirestoreViewModel.swift */,
 			);
 			path = "View Model";
@@ -132,6 +170,7 @@
 		84E6776E27CE1459003C00A7 /* Modules */ = {
 			isa = PBXGroup;
 			children = (
+				843C4B8D27D0FB5F00428CBA /* Chat */,
 				84E6777727CE1E95003C00A7 /* Realtime DB */,
 			);
 			path = Modules;
@@ -141,6 +180,7 @@
 			isa = PBXGroup;
 			children = (
 				84E6775B27CE13ED003C00A7 /* Main.storyboard */,
+				8474DD9B27D0C26700FE8129 /* chat.storyboard */,
 			);
 			path = Storyboard;
 			sourceTree = "<group>";
@@ -148,7 +188,7 @@
 		84E6777027CE1480003C00A7 /* Plist */ = {
 			isa = PBXGroup;
 			children = (
-				84E6777527CE1DC7003C00A7 /* GoogleService-Info.plist */,
+				843C4B8B27D0FAA400428CBA /* GoogleService-Info.plist */,
 			);
 			path = Plist;
 			sourceTree = "<group>";
@@ -251,10 +291,13 @@
 			buildActionMask = 2147483647;
 			files = (
 				84E6776227CE13EF003C00A7 /* LaunchScreen.storyboard in Resources */,
-				84E6777627CE1DC7003C00A7 /* GoogleService-Info.plist in Resources */,
+				845BAFF627D1EC910058593A /* senderMessageCell.xib in Resources */,
 				84E6775F27CE13EF003C00A7 /* Assets.xcassets in Resources */,
 				84E6775D27CE13ED003C00A7 /* Main.storyboard in Resources */,
+				8474DD9C27D0C26700FE8129 /* chat.storyboard in Resources */,
 				84E6777E27CE1EE8003C00A7 /* RTDataCell.xib in Resources */,
+				845BAFFA27D1ECA60058593A /* ReceiverMesssageCell.xib in Resources */,
+				843C4B8C27D0FAA400428CBA /* GoogleService-Info.plist in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -307,12 +350,17 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				845BAFF527D1EC910058593A /* senderMessageCell.swift in Sources */,
+				845BAFEF27D1D03C0058593A /* chatViewModel.swift in Sources */,
 				84E6775A27CE13ED003C00A7 /* ViewController.swift in Sources */,
 				84E6777927CE1EC6003C00A7 /* DisplayRTDataVC.swift in Sources */,
+				843C4B9127D0FB8C00428CBA /* ChatTypeVC.swift in Sources */,
 				84E6777D27CE1EE8003C00A7 /* RTDataCell.swift in Sources */,
+				845BAFF927D1ECA60058593A /* ReceiverMesssageCell.swift in Sources */,
 				84E6775627CE13ED003C00A7 /* AppDelegate.swift in Sources */,
 				84AE626127CF82EC0050DDCA /* DataVC.swift in Sources */,
 				84E6775827CE13ED003C00A7 /* SceneDelegate.swift in Sources */,
+				843C4B8F27D0FB7800428CBA /* ChatVC.swift in Sources */,
 				84AE626327CF88930050DDCA /* FirestoreViewModel.swift in Sources */,
 				84E6778027CE21E8003C00A7 /* Users.swift in Sources */,
 				84AE625E27CF47690050DDCA /* UIVIewController.swift in Sources */,

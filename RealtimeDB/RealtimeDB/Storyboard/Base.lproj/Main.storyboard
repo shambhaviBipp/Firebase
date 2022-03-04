@@ -95,7 +95,7 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="KbL-0p-4P2">
-                                <rect key="frame" x="83.5" y="248" width="153" height="36"/>
+                                <rect key="frame" x="83.5" y="220" width="153" height="36"/>
                                 <color key="backgroundColor" red="0.58282344036656275" green="0.73227143194633881" blue="0.88022220257631278" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <constraints>
                                     <constraint firstAttribute="width" constant="153" id="rLG-Xj-iSS"/>
@@ -110,7 +110,7 @@
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="BNt-r0-egk">
-                                <rect key="frame" x="83.5" y="316" width="153" height="36"/>
+                                <rect key="frame" x="83.5" y="288" width="153" height="36"/>
                                 <color key="backgroundColor" red="0.5828234404" green="0.73227143189999999" blue="0.88022220259999995" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <constraints>
                                     <constraint firstAttribute="width" constant="153" id="QTQ-Nr-ekb"/>
@@ -124,14 +124,32 @@
                                     <action selector="fireStore:" destination="P3d-pt-ZFR" eventType="touchUpInside" id="Z5w-pU-6vE"/>
                                 </connections>
                             </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ufA-zc-w7n">
+                                <rect key="frame" x="83.5" y="351" width="153" height="36"/>
+                                <color key="backgroundColor" red="0.5828234404" green="0.73227143189999999" blue="0.88022220259999995" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="153" id="fha-sd-m0K"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="system" pointSize="20"/>
+                                <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
+                                <state key="normal" title="Chat">
+                                    <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                </state>
+                                <connections>
+                                    <action selector="chat:" destination="P3d-pt-ZFR" eventType="touchUpInside" id="sgW-OF-rkR"/>
+                                    <action selector="fireStore:" destination="P3d-pt-ZFR" eventType="touchUpInside" id="3Qk-sY-ni1"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="FVa-sN-fOb"/>
                         <color key="backgroundColor" red="0.78039215689999997" green="0.77544094019999998" blue="0.70323700960000002" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <constraints>
+                            <constraint firstItem="BNt-r0-egk" firstAttribute="centerY" secondItem="FVa-sN-fOb" secondAttribute="centerY" id="DXg-29-dhK"/>
                             <constraint firstItem="KbL-0p-4P2" firstAttribute="centerX" secondItem="FVa-sN-fOb" secondAttribute="centerX" id="G68-rJ-jga"/>
+                            <constraint firstItem="ufA-zc-w7n" firstAttribute="centerX" secondItem="FVa-sN-fOb" secondAttribute="centerX" id="Iuh-FH-Oho"/>
                             <constraint firstItem="BNt-r0-egk" firstAttribute="centerX" secondItem="FVa-sN-fOb" secondAttribute="centerX" id="SEH-xb-3u4"/>
                             <constraint firstItem="BNt-r0-egk" firstAttribute="top" secondItem="KbL-0p-4P2" secondAttribute="bottom" constant="32" id="UAz-5M-C2L"/>
-                            <constraint firstItem="KbL-0p-4P2" firstAttribute="centerY" secondItem="FVa-sN-fOb" secondAttribute="centerY" constant="-40" id="nwH-mQ-1Qa"/>
+                            <constraint firstItem="ufA-zc-w7n" firstAttribute="top" secondItem="BNt-r0-egk" secondAttribute="bottom" constant="27" id="gtQ-NM-0rG"/>
                         </constraints>
                     </view>
                     <navigationItem key="navigationItem" id="QFs-HT-D3c"/>

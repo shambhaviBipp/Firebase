@@ -19,3 +19,15 @@ class UsersData{
         self.address = address
     }
 }
+    
+class Messages{
+    var name: String?
+    var message: String?
+    var type: String?
+    
+    init(name: String, message: String, type: String){
+        self.name = name
+        self.message = message
+        self.type = type
+    }
+}
