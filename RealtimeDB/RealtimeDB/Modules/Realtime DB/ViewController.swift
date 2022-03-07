@@ -27,8 +27,9 @@ class ViewController: UIViewController {
     
    
     @IBAction func fireStore(_ sender: Any) {
-       // guard let vc =  UIStoryboard.init(name: "Main", bundle: Bundle.main).instantiateViewController(withIdentifier: "DataVC") as? DataVC else {return}
-        //vc.type = "firestore"
+        guard let vc =  UIStoryboard.init(name: "Main", bundle: Bundle.main).instantiateViewController(withIdentifier: "DataVC") as? DataVC else {return}
+        vc.type = "firestore"
+        self.navigationController?.pushViewController(vc, animated: true)
     }
     
     @IBAction func chat(_ sender: Any) {

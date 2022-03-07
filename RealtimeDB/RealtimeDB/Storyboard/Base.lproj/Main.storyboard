@@ -137,7 +137,6 @@
                                 </state>
                                 <connections>
                                     <action selector="chat:" destination="P3d-pt-ZFR" eventType="touchUpInside" id="sgW-OF-rkR"/>
-                                    <action selector="fireStore:" destination="P3d-pt-ZFR" eventType="touchUpInside" id="3Qk-sY-ni1"/>
                                 </connections>
                             </button>
                         </subviews>
