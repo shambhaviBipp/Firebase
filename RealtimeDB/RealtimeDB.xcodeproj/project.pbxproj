@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		170B8D034DB41945C808AE6A /* Pods_RealtimeDB.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 2DB3560460EE29CC7864011E /* Pods_RealtimeDB.framework */; };
+		84100A3827D5DD1800381E89 /* MessageBox.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84100A3727D5DD1800381E89 /* MessageBox.swift */; };
 		843C4B8C27D0FAA400428CBA /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 843C4B8B27D0FAA400428CBA /* GoogleService-Info.plist */; };
 		843C4B8F27D0FB7800428CBA /* ChatVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 843C4B8E27D0FB7800428CBA /* ChatVC.swift */; };
 		843C4B9127D0FB8C00428CBA /* ChatTypeVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 843C4B9027D0FB8C00428CBA /* ChatTypeVC.swift */; };
@@ -37,6 +38,7 @@
 		2DB3560460EE29CC7864011E /* Pods_RealtimeDB.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_RealtimeDB.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		33B067498924EA42F7AE6084 /* Pods-RealtimeDB.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-RealtimeDB.debug.xcconfig"; path = "Target Support Files/Pods-RealtimeDB/Pods-RealtimeDB.debug.xcconfig"; sourceTree = "<group>"; };
 		8074383ECFFFBD7D46FE2E9C /* Pods-RealtimeDB.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-RealtimeDB.release.xcconfig"; path = "Target Support Files/Pods-RealtimeDB/Pods-RealtimeDB.release.xcconfig"; sourceTree = "<group>"; };
+		84100A3727D5DD1800381E89 /* MessageBox.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MessageBox.swift; sourceTree = "<group>"; };
 		843C4B8B27D0FAA400428CBA /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 		843C4B8E27D0FB7800428CBA /* ChatVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChatVC.swift; sourceTree = "<group>"; };
 		843C4B9027D0FB8C00428CBA /* ChatTypeVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChatTypeVC.swift; sourceTree = "<group>"; };
@@ -76,6 +78,14 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		84100A3627D5DD0500381E89 /* Custom */ = {
+			isa = PBXGroup;
+			children = (
+				84100A3727D5DD1800381E89 /* MessageBox.swift */,
+			);
+			path = Custom;
+			sourceTree = "<group>";
+		};
 		843C4B8D27D0FB5F00428CBA /* Chat */ = {
 			isa = PBXGroup;
 			children = (
@@ -126,6 +136,7 @@
 		84E6775427CE13ED003C00A7 /* RealtimeDB */ = {
 			isa = PBXGroup;
 			children = (
+				84100A3627D5DD0500381E89 /* Custom */,
 				84AE625C27CF47470050DDCA /* Extension */,
 				84E6777027CE1480003C00A7 /* Plist */,
 				84E6776F27CE1464003C00A7 /* Storyboard */,
@@ -359,6 +370,7 @@
 				845BAFF927D1ECA60058593A /* ReceiverMesssageCell.swift in Sources */,
 				84E6775627CE13ED003C00A7 /* AppDelegate.swift in Sources */,
 				84AE626127CF82EC0050DDCA /* DataVC.swift in Sources */,
+				84100A3827D5DD1800381E89 /* MessageBox.swift in Sources */,
 				84E6775827CE13ED003C00A7 /* SceneDelegate.swift in Sources */,
 				843C4B8F27D0FB7800428CBA /* ChatVC.swift in Sources */,
 				84AE626327CF88930050DDCA /* FirestoreViewModel.swift in Sources */,

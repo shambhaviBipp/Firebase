@@ -7,32 +7,12 @@
 
 import UIKit
 import FirebaseFirestore
-//import MessageKit
-//import InputBarAccessoryView
-//
-//struct Sender: SenderType{
-//    //var photoURL: URL
-//    var senderId: String
-//    var displayName: String
-//}
-//
-//
-//struct Message : MessageType{
-//    var sender: SenderType
-//    var messageId: String
-//    var sentDate: Date
-//    var kind: MessageKind
-//}
 
 
 class ChatVC: UIViewController {
-    
-//    var messageListener: ListenerRegistration?
-//    let sender = Sender(senderId: "sender", displayName: "Sender")
-//    let receiver = Sender(senderId: "receiver", displayName: "Receiver")
-//    var messages = [Message]()
-    
-    @IBOutlet weak var txtMessage: UITextField!
+ 
+    @IBOutlet weak var txtHeightConstraint: NSLayoutConstraint!
+    @IBOutlet weak var txtMsg: UITextView!
     @IBOutlet weak var tblView: UITableView!
     
     var name = ""
@@ -40,9 +20,11 @@ class ChatVC: UIViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
-        txtMessage.delegate = self
+        txtMsg.delegate = self
+        txtMsg.text = "Type Here"
+        txtMsg.textColor = UIColor.lightGray
+        txtHeightConstraint.constant = txtMsg.contentSize.height
         registerCell()
-        
         getMessage()
     }
     
@@ -66,7 +48,7 @@ class ChatVC: UIViewController {
         }
         
         
-        viewModel.sendMessage(message: txtMessage.text!, receiver: receiver, sender: sender) { result in
+        viewModel.sendMessage(message: txtMsg.text!, receiver: receiver, sender: sender) { result in
             if result == "success"{
                 
             }else{
@@ -74,7 +56,7 @@ class ChatVC: UIViewController {
             }
         }
         
-        viewModel.receiveMessage(message: txtMessage.text!, receiver: receiver, sender: sender) { result in
+        viewModel.receiveMessage(message: txtMsg.text!, receiver: receiver, sender: sender) { result in
             if result == "success"{
                 
             }else{
@@ -99,7 +81,8 @@ class ChatVC: UIViewController {
         viewModel.getMessages(selfName: sender, name: receiver) { result in
             
             if result != nil{
-                self.txtMessage.text = ""
+                self.txtMsg.text = "Type Here"
+                self.txtMsg.textColor = UIColor.lightGray
                 self.tblView.reloadData()
             }else{
                 self.view.makeToast("No data found!")
@@ -131,9 +114,22 @@ extension ChatVC: UITableViewDelegate, UITableViewDataSource{
     
 }
 
-extension ChatVC: UITextFieldDelegate{
-    func textFieldShouldReturn(_ textField: UITextField) -> Bool {
-        textField.resignFirstResponder()
-        return true
+extension ChatVC: UITextViewDelegate{
+    
+    func textViewDidChange(_ textView: UITextView) {
+        txtHeightConstraint.constant = txtMsg.contentSize.height
     }
+    
+    func textViewDidBeginEditing(_ textView: UITextView) {
+        textView.text = nil
+        textView.textColor = UIColor.black
+    }
+    
+    func textViewDidEndEditing(_ textView: UITextView) {
+        if textView.text.isEmpty {
+            textView.text = "Type Here"
+            textView.textColor = UIColor.lightGray
+        }
+    }
+    
 }

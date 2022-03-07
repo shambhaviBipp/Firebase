@@ -73,40 +73,47 @@
                                     <outlet property="delegate" destination="KUB-er-Q2H" id="3Dq-Ua-a5T"/>
                                 </connections>
                             </tableView>
-                            <textField opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="249" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="RTJ-k1-Zcf">
-                                <rect key="frame" x="0.0" y="504" width="256" height="56"/>
-                                <constraints>
-                                    <constraint firstAttribute="height" constant="56" id="OIi-Yh-W6s"/>
-                                </constraints>
-                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                <textInputTraits key="textInputTraits"/>
-                            </textField>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="1OI-ai-e4Q">
-                                <rect key="frame" x="254" y="516.5" width="58" height="31"/>
+                                <rect key="frame" x="274" y="518" width="30" height="30"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="30" id="4eA-VR-ZaS"/>
+                                    <constraint firstAttribute="width" constant="30" id="oa9-qV-Vth"/>
+                                </constraints>
                                 <state key="normal" title="Button"/>
-                                <buttonConfiguration key="configuration" style="plain" title="Send"/>
+                                <buttonConfiguration key="configuration" style="plain" image="send"/>
                                 <connections>
                                     <action selector="send:" destination="KUB-er-Q2H" eventType="touchUpInside" id="uut-uy-yQb"/>
                                 </connections>
                             </button>
+                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="Vgv-N9-jLB">
+                                <rect key="frame" x="16" y="510" width="242" height="46"/>
+                                <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="46" id="JN4-Zz-8zO"/>
+                                </constraints>
+                                <color key="textColor" systemColor="labelColor"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
+                            </textView>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="I9T-ik-dKV"/>
-                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <color key="backgroundColor" white="0.66666666666666663" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <constraints>
-                            <constraint firstItem="RTJ-k1-Zcf" firstAttribute="leading" secondItem="I9T-ik-dKV" secondAttribute="leading" id="CVU-ys-IyQ"/>
                             <constraint firstItem="19M-DL-sox" firstAttribute="leading" secondItem="I9T-ik-dKV" secondAttribute="leading" id="EBF-h3-vGN"/>
-                            <constraint firstItem="I9T-ik-dKV" firstAttribute="trailing" secondItem="1OI-ai-e4Q" secondAttribute="trailing" constant="8" id="LfC-hc-Ivt"/>
-                            <constraint firstItem="1OI-ai-e4Q" firstAttribute="centerY" secondItem="RTJ-k1-Zcf" secondAttribute="centerY" id="cbN-q4-n4n"/>
+                            <constraint firstItem="Vgv-N9-jLB" firstAttribute="top" secondItem="19M-DL-sox" secondAttribute="bottom" constant="14" id="Ih5-TT-fqJ"/>
+                            <constraint firstItem="I9T-ik-dKV" firstAttribute="trailing" secondItem="1OI-ai-e4Q" secondAttribute="trailing" constant="16" id="LfC-hc-Ivt"/>
+                            <constraint firstItem="1OI-ai-e4Q" firstAttribute="centerY" secondItem="Vgv-N9-jLB" secondAttribute="centerY" id="RdF-cp-p6s"/>
                             <constraint firstItem="I9T-ik-dKV" firstAttribute="trailing" secondItem="19M-DL-sox" secondAttribute="trailing" id="dyR-7E-CFA"/>
-                            <constraint firstItem="RTJ-k1-Zcf" firstAttribute="top" secondItem="19M-DL-sox" secondAttribute="bottom" constant="8" id="er3-dU-nQV"/>
-                            <constraint firstItem="1OI-ai-e4Q" firstAttribute="leading" secondItem="RTJ-k1-Zcf" secondAttribute="trailing" constant="-2" id="g5M-Eu-zkQ"/>
-                            <constraint firstItem="I9T-ik-dKV" firstAttribute="bottom" secondItem="RTJ-k1-Zcf" secondAttribute="bottom" constant="8" id="o35-hc-XNA"/>
+                            <constraint firstItem="1OI-ai-e4Q" firstAttribute="leading" secondItem="Vgv-N9-jLB" secondAttribute="trailing" constant="16" id="gqo-Fv-2YJ"/>
                             <constraint firstItem="19M-DL-sox" firstAttribute="top" secondItem="I9T-ik-dKV" secondAttribute="top" id="rVq-Mr-J8c"/>
+                            <constraint firstItem="Vgv-N9-jLB" firstAttribute="leading" secondItem="I9T-ik-dKV" secondAttribute="leading" constant="16" id="uMg-bf-jf0"/>
+                            <constraint firstItem="I9T-ik-dKV" firstAttribute="bottom" secondItem="Vgv-N9-jLB" secondAttribute="bottom" constant="12" id="wNS-Zv-EYq"/>
                         </constraints>
                     </view>
                     <connections>
                         <outlet property="tblView" destination="19M-DL-sox" id="Tlv-N2-Guw"/>
-                        <outlet property="txtMessage" destination="RTJ-k1-Zcf" id="ufn-Cr-nvz"/>
+                        <outlet property="txtHeightConstraint" destination="JN4-Zz-8zO" id="GKM-4k-W3S"/>
+                        <outlet property="txtMsg" destination="Vgv-N9-jLB" id="hO5-o1-8GY"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="gXk-oH-req" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
@@ -133,6 +140,10 @@
         </scene>
     </scenes>
     <resources>
+        <image name="send" width="32" height="32"/>
+        <systemColor name="labelColor">
+            <color white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+        </systemColor>
         <systemColor name="systemBackgroundColor">
             <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
         </systemColor>
