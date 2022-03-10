@@ -6,6 +6,7 @@
 //
 
 import UIKit
+import Firebase
 
 class ViewController: UIViewController {
     
@@ -33,7 +34,7 @@ class ViewController: UIViewController {
     }
     
     @IBAction func chat(_ sender: Any) {
-        
+        Analytics.logEvent("ChatType", parameters: [:])
         guard let vc =  UIStoryboard.init(name: "chat", bundle: Bundle.main).instantiateViewController(withIdentifier: "ChatTypeVC") as? ChatTypeVC else {return}
         self.navigationController?.pushViewController(vc, animated: true)
     }

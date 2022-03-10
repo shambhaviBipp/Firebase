@@ -28,7 +28,7 @@
                                 <color key="shadowColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                             </label>
                         </subviews>
-                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <constraints>
                             <constraint firstAttribute="bottom" secondItem="qUw-R8-9Yg" secondAttribute="bottom" constant="4" id="74g-li-LKW"/>
                             <constraint firstItem="qUw-R8-9Yg" firstAttribute="top" secondItem="zBe-Jz-daE" secondAttribute="top" constant="4" id="Am8-nd-mNZ"/>

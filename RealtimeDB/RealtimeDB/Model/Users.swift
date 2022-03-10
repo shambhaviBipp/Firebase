@@ -21,13 +21,19 @@ class UsersData{
 }
     
 class Messages{
-    var name: String?
-    var message: String?
-    var type: String?
+    var firbaseKey : String?
+    var receiverID: String?
+    var senderID: String?
+    var Msg: String?
+    var date_time: String?
+    var MsgType: String?
     
-    init(name: String, message: String, type: String){
-        self.name = name
-        self.message = message
-        self.type = type
+    init(firbaseKey: String, receiverID: String, senderID: String, Msg: String, date_time: String, MsgType: String){
+        self.firbaseKey = firbaseKey
+        self.receiverID = receiverID
+        self.senderID = senderID
+        self.Msg = Msg
+        self.date_time = date_time
+        self.MsgType = MsgType
     }
 }
