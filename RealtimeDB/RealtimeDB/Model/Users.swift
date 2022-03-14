@@ -37,3 +37,18 @@ class Messages{
         self.MsgType = MsgType
     }
 }
+
+
+class Users{
+    var Name : String?
+    var Email: String?
+    var isOnline: String?
+    var userId: String?
+    
+    init(Name: String, Email: String, isOnline: String, userId: String){
+        self.Name = Name
+        self.Email = Email
+        self.isOnline = isOnline
+        self.userId = userId
+    }
+}

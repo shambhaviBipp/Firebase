@@ -39,12 +39,30 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
     func sceneWillEnterForeground(_ scene: UIScene) {
         // Called as the scene transitions from the background to the foreground.
         // Use this method to undo the changes made on entering the background.
+        
+        if UserDefaults.standard.bool(forKey: "isLoggedIn") == true{
+            let chatModel = chatModel()
+            chatModel.online_offline(id: UserDefaults.standard.string(forKey: "UserID") ?? "-", status: "online") { bool in
+            }
+            
+        }
     }
 
     func sceneDidEnterBackground(_ scene: UIScene) {
         // Called as the scene transitions from the foreground to the background.
         // Use this method to save data, release shared resources, and store enough scene-specific state information
-        // to restore the scene back to its current state.
+        // to restore the scene back to its current state
+        if UserDefaults.standard.bool(forKey: "isLoggedIn") == true{
+            let chatModel = chatModel()
+            let date = Date()
+            let formatter = DateFormatter()
+            formatter.dateFormat = "HH:MM"
+            let strTime =  formatter.string(from: date)
+            
+            chatModel.online_offline(id: UserDefaults.standard.string(forKey: "UserID") ?? "-", status: "last seen at: \(strTime)") { bool in
+            }
+            
+        }
     }
 
 

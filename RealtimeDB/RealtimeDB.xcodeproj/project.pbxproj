@@ -20,6 +20,12 @@
 		845F6F0627CE62FE001DE267 /* RealTimeDBViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 845F6F0527CE62FE001DE267 /* RealTimeDBViewModel.swift */; };
 		8473074527D87D940036365C /* Navigation.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8473074427D87D940036365C /* Navigation.swift */; };
 		8474DD9C27D0C26700FE8129 /* chat.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 8474DD9B27D0C26700FE8129 /* chat.storyboard */; };
+		84ACFCC327D9D84F0010CB19 /* SignIn.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 84ACFCC227D9D84F0010CB19 /* SignIn.storyboard */; };
+		84ACFCC627D9DEB70010CB19 /* signInVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84ACFCC527D9DEB70010CB19 /* signInVC.swift */; };
+		84ACFCC827D9EC920010CB19 /* Validation.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84ACFCC727D9EC920010CB19 /* Validation.swift */; };
+		84ACFCCA27D9F6600010CB19 /* loginViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84ACFCC927D9F6600010CB19 /* loginViewModel.swift */; };
+		84ACFCCD27DA01FE0010CB19 /* usersCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84ACFCCB27DA01FE0010CB19 /* usersCell.swift */; };
+		84ACFCCE27DA01FE0010CB19 /* usersCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 84ACFCCC27DA01FE0010CB19 /* usersCell.xib */; };
 		84AE625E27CF47690050DDCA /* UIVIewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84AE625D27CF47690050DDCA /* UIVIewController.swift */; };
 		84AE626127CF82EC0050DDCA /* DataVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84AE626027CF82EC0050DDCA /* DataVC.swift */; };
 		84AE626327CF88930050DDCA /* FirestoreViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84AE626227CF88930050DDCA /* FirestoreViewModel.swift */; };
@@ -51,6 +57,12 @@
 		845F6F0527CE62FE001DE267 /* RealTimeDBViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RealTimeDBViewModel.swift; sourceTree = "<group>"; };
 		8473074427D87D940036365C /* Navigation.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Navigation.swift; sourceTree = "<group>"; };
 		8474DD9B27D0C26700FE8129 /* chat.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = chat.storyboard; sourceTree = "<group>"; };
+		84ACFCC227D9D84F0010CB19 /* SignIn.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = SignIn.storyboard; sourceTree = "<group>"; };
+		84ACFCC527D9DEB70010CB19 /* signInVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = signInVC.swift; sourceTree = "<group>"; };
+		84ACFCC727D9EC920010CB19 /* Validation.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Validation.swift; sourceTree = "<group>"; };
+		84ACFCC927D9F6600010CB19 /* loginViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = loginViewModel.swift; sourceTree = "<group>"; };
+		84ACFCCB27DA01FE0010CB19 /* usersCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = usersCell.swift; sourceTree = "<group>"; };
+		84ACFCCC27DA01FE0010CB19 /* usersCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = usersCell.xib; sourceTree = "<group>"; };
 		84AE625D27CF47690050DDCA /* UIVIewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIVIewController.swift; sourceTree = "<group>"; };
 		84AE626027CF82EC0050DDCA /* DataVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DataVC.swift; sourceTree = "<group>"; };
 		84AE626227CF88930050DDCA /* FirestoreViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FirestoreViewModel.swift; sourceTree = "<group>"; };
@@ -85,6 +97,7 @@
 			children = (
 				84100A3727D5DD1800381E89 /* MessageBox.swift */,
 				8473074427D87D940036365C /* Navigation.swift */,
+				84ACFCC727D9EC920010CB19 /* Validation.swift */,
 			);
 			path = Custom;
 			sourceTree = "<group>";
@@ -106,8 +119,18 @@
 				845BAFF427D1EC910058593A /* senderMessageCell.xib */,
 				845BAFF727D1ECA60058593A /* ReceiverMesssageCell.swift */,
 				845BAFF827D1ECA60058593A /* ReceiverMesssageCell.xib */,
+				84ACFCCB27DA01FE0010CB19 /* usersCell.swift */,
+				84ACFCCC27DA01FE0010CB19 /* usersCell.xib */,
 			);
 			path = Cell;
+			sourceTree = "<group>";
+		};
+		84ACFCC427D9DE250010CB19 /* Sign In */ = {
+			isa = PBXGroup;
+			children = (
+				84ACFCC527D9DEB70010CB19 /* signInVC.swift */,
+			);
+			path = "Sign In";
 			sourceTree = "<group>";
 		};
 		84AE625C27CF47470050DDCA /* Extension */ = {
@@ -177,6 +200,7 @@
 				845F6F0527CE62FE001DE267 /* RealTimeDBViewModel.swift */,
 				845BAFEE27D1D03C0058593A /* chatViewModel.swift */,
 				84AE626227CF88930050DDCA /* FirestoreViewModel.swift */,
+				84ACFCC927D9F6600010CB19 /* loginViewModel.swift */,
 			);
 			path = "View Model";
 			sourceTree = "<group>";
@@ -184,6 +208,7 @@
 		84E6776E27CE1459003C00A7 /* Modules */ = {
 			isa = PBXGroup;
 			children = (
+				84ACFCC427D9DE250010CB19 /* Sign In */,
 				843C4B8D27D0FB5F00428CBA /* Chat */,
 				84E6777727CE1E95003C00A7 /* Realtime DB */,
 			);
@@ -195,6 +220,7 @@
 			children = (
 				84E6775B27CE13ED003C00A7 /* Main.storyboard */,
 				8474DD9B27D0C26700FE8129 /* chat.storyboard */,
+				84ACFCC227D9D84F0010CB19 /* SignIn.storyboard */,
 			);
 			path = Storyboard;
 			sourceTree = "<group>";
@@ -306,8 +332,10 @@
 			files = (
 				84E6776227CE13EF003C00A7 /* LaunchScreen.storyboard in Resources */,
 				845BAFF627D1EC910058593A /* senderMessageCell.xib in Resources */,
+				84ACFCCE27DA01FE0010CB19 /* usersCell.xib in Resources */,
 				84E6775F27CE13EF003C00A7 /* Assets.xcassets in Resources */,
 				84E6775D27CE13ED003C00A7 /* Main.storyboard in Resources */,
+				84ACFCC327D9D84F0010CB19 /* SignIn.storyboard in Resources */,
 				8474DD9C27D0C26700FE8129 /* chat.storyboard in Resources */,
 				84E6777E27CE1EE8003C00A7 /* RTDataCell.xib in Resources */,
 				845BAFFA27D1ECA60058593A /* ReceiverMesssageCell.xib in Resources */,
@@ -368,14 +396,18 @@
 				845BAFEF27D1D03C0058593A /* chatViewModel.swift in Sources */,
 				84E6775A27CE13ED003C00A7 /* ViewController.swift in Sources */,
 				84E6777927CE1EC6003C00A7 /* DisplayRTDataVC.swift in Sources */,
+				84ACFCCD27DA01FE0010CB19 /* usersCell.swift in Sources */,
 				843C4B9127D0FB8C00428CBA /* ChatTypeVC.swift in Sources */,
 				84E6777D27CE1EE8003C00A7 /* RTDataCell.swift in Sources */,
 				845BAFF927D1ECA60058593A /* ReceiverMesssageCell.swift in Sources */,
 				84E6775627CE13ED003C00A7 /* AppDelegate.swift in Sources */,
+				84ACFCCA27D9F6600010CB19 /* loginViewModel.swift in Sources */,
 				8473074527D87D940036365C /* Navigation.swift in Sources */,
 				84AE626127CF82EC0050DDCA /* DataVC.swift in Sources */,
+				84ACFCC627D9DEB70010CB19 /* signInVC.swift in Sources */,
 				84100A3827D5DD1800381E89 /* MessageBox.swift in Sources */,
 				84E6775827CE13ED003C00A7 /* SceneDelegate.swift in Sources */,
+				84ACFCC827D9EC920010CB19 /* Validation.swift in Sources */,
 				843C4B8F27D0FB7800428CBA /* ChatVC.swift in Sources */,
 				84AE626327CF88930050DDCA /* FirestoreViewModel.swift in Sources */,
 				84E6778027CE21E8003C00A7 /* Users.swift in Sources */,

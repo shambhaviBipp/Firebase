@@ -16,42 +16,28 @@
                         <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Fuq-Gy-bHw">
-                                <rect key="frame" x="85" y="250.5" width="150" height="31"/>
-                                <color key="backgroundColor" red="0.89408450226365743" green="1" blue="0.3717812580415083" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                <constraints>
-                                    <constraint firstAttribute="height" constant="31" id="0Eb-ve-S1H"/>
-                                    <constraint firstAttribute="width" constant="150" id="93U-BA-WZF"/>
-                                </constraints>
-                                <state key="normal" title="Button"/>
-                                <buttonConfiguration key="configuration" style="plain" title="Dhiraj"/>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="-1" estimatedSectionHeaderHeight="-1" sectionFooterHeight="-1" estimatedSectionFooterHeight="-1" translatesAutoresizingMaskIntoConstraints="NO" id="hnj-Xh-sdb">
+                                <rect key="frame" x="0.0" y="44" width="320" height="524"/>
+                                <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                                 <connections>
-                                    <action selector="Dhiraj:" destination="Y6W-OH-hqX" eventType="touchUpInside" id="zCr-EH-ScI"/>
+                                    <outlet property="dataSource" destination="Y6W-OH-hqX" id="k2E-M8-uhZ"/>
+                                    <outlet property="delegate" destination="Y6W-OH-hqX" id="Bcn-fR-foB"/>
                                 </connections>
-                            </button>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="I0F-T2-Kz5">
-                                <rect key="frame" x="85" y="307" width="150" height="31"/>
-                                <color key="backgroundColor" red="0.89408450230000003" green="1" blue="0.371781258" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                <constraints>
-                                    <constraint firstAttribute="width" constant="150" id="fBj-Qg-WCA"/>
-                                </constraints>
-                                <state key="normal" title="Button"/>
-                                <buttonConfiguration key="configuration" style="plain" title="Priya"/>
-                                <connections>
-                                    <action selector="Priya:" destination="Y6W-OH-hqX" eventType="touchUpInside" id="Wv5-qP-pFc"/>
-                                </connections>
-                            </button>
+                            </tableView>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="vDu-zF-Fre"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                         <constraints>
-                            <constraint firstItem="I0F-T2-Kz5" firstAttribute="top" secondItem="Fuq-Gy-bHw" secondAttribute="bottom" constant="25.5" id="Fdf-UQ-JcZ"/>
-                            <constraint firstItem="Fuq-Gy-bHw" firstAttribute="centerY" secondItem="vDu-zF-Fre" secondAttribute="centerY" constant="-40" id="dtw-ga-tVo"/>
-                            <constraint firstItem="Fuq-Gy-bHw" firstAttribute="centerX" secondItem="vDu-zF-Fre" secondAttribute="centerX" id="lSj-9X-F8O"/>
-                            <constraint firstItem="I0F-T2-Kz5" firstAttribute="centerX" secondItem="vDu-zF-Fre" secondAttribute="centerX" id="tRW-xH-b4v"/>
+                            <constraint firstItem="vDu-zF-Fre" firstAttribute="bottom" secondItem="hnj-Xh-sdb" secondAttribute="bottom" id="9dl-ue-A5p"/>
+                            <constraint firstItem="hnj-Xh-sdb" firstAttribute="leading" secondItem="vDu-zF-Fre" secondAttribute="leading" id="AgK-2J-S3F"/>
+                            <constraint firstItem="vDu-zF-Fre" firstAttribute="trailing" secondItem="hnj-Xh-sdb" secondAttribute="trailing" id="Dis-wN-XnH"/>
+                            <constraint firstItem="hnj-Xh-sdb" firstAttribute="top" secondItem="vDu-zF-Fre" secondAttribute="top" id="LmD-0s-5HA"/>
                         </constraints>
                     </view>
                     <navigationItem key="navigationItem" id="VA4-L1-gAv"/>
+                    <connections>
+                        <outlet property="tblView" destination="hnj-Xh-sdb" id="acX-Uw-24p"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Ief-a0-LHa" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>

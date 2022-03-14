@@ -44,4 +44,3 @@ func setTitle(title:String, subtitle:String) -> UIView {
         return titleView
     }
 
-

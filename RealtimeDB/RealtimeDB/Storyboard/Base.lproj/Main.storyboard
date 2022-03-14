@@ -139,22 +139,44 @@
                                     <action selector="chat:" destination="P3d-pt-ZFR" eventType="touchUpInside" id="sgW-OF-rkR"/>
                                 </connections>
                             </button>
+                            <button opaque="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="lOv-x8-cH0">
+                                <rect key="frame" x="237" y="53" width="68" height="31"/>
+                                <state key="normal" title="Button"/>
+                                <buttonConfiguration key="configuration" style="plain" title="Sign in"/>
+                                <connections>
+                                    <action selector="signIn:" destination="P3d-pt-ZFR" eventType="touchUpInside" id="Yag-TJ-xNt"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="DHY-zR-Mto">
+                                <rect key="frame" x="226" y="83" width="78" height="31"/>
+                                <state key="normal" title="Button"/>
+                                <buttonConfiguration key="configuration" style="plain" title="Sign out"/>
+                                <connections>
+                                    <action selector="signOut:" destination="P3d-pt-ZFR" eventType="touchUpInside" id="GjD-U3-3fh"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="FVa-sN-fOb"/>
                         <color key="backgroundColor" red="0.78039215689999997" green="0.77544094019999998" blue="0.70323700960000002" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <constraints>
+                            <constraint firstItem="FVa-sN-fOb" firstAttribute="trailing" secondItem="lOv-x8-cH0" secondAttribute="trailing" constant="15" id="8ih-BR-bXg"/>
+                            <constraint firstItem="FVa-sN-fOb" firstAttribute="trailing" secondItem="DHY-zR-Mto" secondAttribute="trailing" constant="16" id="AU0-mc-tjE"/>
                             <constraint firstItem="BNt-r0-egk" firstAttribute="centerY" secondItem="FVa-sN-fOb" secondAttribute="centerY" id="DXg-29-dhK"/>
                             <constraint firstItem="KbL-0p-4P2" firstAttribute="centerX" secondItem="FVa-sN-fOb" secondAttribute="centerX" id="G68-rJ-jga"/>
                             <constraint firstItem="ufA-zc-w7n" firstAttribute="centerX" secondItem="FVa-sN-fOb" secondAttribute="centerX" id="Iuh-FH-Oho"/>
                             <constraint firstItem="BNt-r0-egk" firstAttribute="centerX" secondItem="FVa-sN-fOb" secondAttribute="centerX" id="SEH-xb-3u4"/>
                             <constraint firstItem="BNt-r0-egk" firstAttribute="top" secondItem="KbL-0p-4P2" secondAttribute="bottom" constant="32" id="UAz-5M-C2L"/>
+                            <constraint firstItem="lOv-x8-cH0" firstAttribute="top" secondItem="FVa-sN-fOb" secondAttribute="top" id="Wv1-Mn-6NH"/>
                             <constraint firstItem="ufA-zc-w7n" firstAttribute="top" secondItem="BNt-r0-egk" secondAttribute="bottom" constant="27" id="gtQ-NM-0rG"/>
+                            <constraint firstItem="DHY-zR-Mto" firstAttribute="top" secondItem="lOv-x8-cH0" secondAttribute="bottom" constant="8" symbolic="YES" id="hgs-x3-Uak"/>
                         </constraints>
                     </view>
                     <navigationItem key="navigationItem" id="QFs-HT-D3c"/>
                     <connections>
                         <outlet property="btnFirestore" destination="BNt-r0-egk" id="erZ-JY-R3I"/>
+                        <outlet property="btnLogin" destination="lOv-x8-cH0" id="yWK-Kx-X4r"/>
                         <outlet property="btnRealTime" destination="KbL-0p-4P2" id="d8G-IN-eWJ"/>
+                        <outlet property="btnSignOut" destination="DHY-zR-Mto" id="w6r-ar-tUN"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="8a0-5d-vnI" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
