@@ -1,0 +1,56 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="19529" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+    <device id="retina6_1" orientation="portrait" appearance="light"/>
+    <dependencies>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="19519"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="System colors in document resources" minToolsVersion="11.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <tableViewCell contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" rowHeight="90" id="KGk-i7-Jjw" customClass="fileCell" customModule="RealtimeDB" customModuleProvider="target">
+            <rect key="frame" x="0.0" y="0.0" width="309" height="90"/>
+            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+            <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="KGk-i7-Jjw" id="H2p-sc-9uM">
+                <rect key="frame" x="0.0" y="0.0" width="309" height="90"/>
+                <autoresizingMask key="autoresizingMask"/>
+                <subviews>
+                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="DaA-Kv-Uhy">
+                        <rect key="frame" x="16" y="5" width="240" height="79"/>
+                        <subviews>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="o1S-Rx-gNa">
+                                <rect key="frame" x="0.0" y="0.0" width="240" height="79"/>
+                            </imageView>
+                        </subviews>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <constraints>
+                            <constraint firstItem="o1S-Rx-gNa" firstAttribute="leading" secondItem="DaA-Kv-Uhy" secondAttribute="leading" id="PZA-S5-1zF"/>
+                            <constraint firstAttribute="trailing" secondItem="o1S-Rx-gNa" secondAttribute="trailing" id="YvN-zB-h93"/>
+                            <constraint firstAttribute="bottom" secondItem="o1S-Rx-gNa" secondAttribute="bottom" id="dZL-cX-tek"/>
+                            <constraint firstItem="o1S-Rx-gNa" firstAttribute="top" secondItem="DaA-Kv-Uhy" secondAttribute="top" id="kb3-7A-XVY"/>
+                        </constraints>
+                    </view>
+                </subviews>
+                <constraints>
+                    <constraint firstItem="DaA-Kv-Uhy" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leading" constant="16" id="G5U-hl-EmG"/>
+                    <constraint firstAttribute="trailing" secondItem="DaA-Kv-Uhy" secondAttribute="trailing" constant="53" id="JDC-MX-SFa"/>
+                    <constraint firstAttribute="bottom" secondItem="DaA-Kv-Uhy" secondAttribute="bottom" constant="6" id="MSg-RQ-rng"/>
+                    <constraint firstItem="DaA-Kv-Uhy" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="top" constant="5" id="Osv-T9-a4v"/>
+                </constraints>
+            </tableViewCellContentView>
+            <viewLayoutGuide key="safeArea" id="njF-e1-oar"/>
+            <connections>
+                <outlet property="imgView" destination="o1S-Rx-gNa" id="Heb-r0-yTw"/>
+                <outlet property="view" destination="DaA-Kv-Uhy" id="fXo-HO-gKO"/>
+            </connections>
+            <point key="canvasLocation" x="129.71014492753625" y="95.089285714285708"/>
+        </tableViewCell>
+    </objects>
+    <resources>
+        <systemColor name="systemBackgroundColor">
+            <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+        </systemColor>
+    </resources>
+</document>

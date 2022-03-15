@@ -11,14 +11,16 @@ import FirebaseFirestore
 
 class ChatVC: UIViewController {
  
+    @IBOutlet weak var btnFileUpload: UIButton!
     @IBOutlet weak var txtHeightConstraint: NSLayoutConstraint!
     @IBOutlet weak var txtMsg: UITextView!
     @IBOutlet weak var tblView: UITableView!
     
+    var isFirstCall = true
     var name = ""
     var data: Users?
     let viewModel = chatModel()
-
+   
     override func viewDidLoad() {
         super.viewDidLoad()
         txtMsg.delegate = self
@@ -27,9 +29,22 @@ class ChatVC: UIViewController {
         txtHeightConstraint.constant = txtMsg.contentSize.height
         registerCell()
         getMessage()
-        
+        fileUploadMenu()
     }
     
+    func childRemove(){
+        viewModel.childRemoved { data in
+            for i in 0 ..< self.viewModel.messages.count{
+                if self.viewModel.messages[i].firbaseKey == data.key{
+                    self.viewModel.messages.remove(at: i)
+                    let indexPath = IndexPath(row: i, section: 0)
+                    self.tblView.deleteRows(at: [indexPath], with: .none)
+                    break
+                }
+            }
+            
+        }
+    }
     
     override func viewWillAppear(_ animated: Bool) {
         viewModel.checkOnlineUser(id: data?.userId ?? "-") { result in
@@ -44,20 +59,26 @@ class ChatVC: UIViewController {
     }
     
     
+    @IBAction func fileUpload(_ sender: Any) {
+    }
     @IBAction func send(_ sender: Any) {
-        viewModel.sendMessage(message: txtMsg.text!, receiverID: data?.userId ?? "-", senderID: UserDefaults.standard.string(forKey: "UserID") ?? "-"){result in
-            
-        }
+        viewModel.sendMessage(message: txtMsg.text!, receiverID: data?.userId ?? "-", senderID: UserDefaults.standard.string(forKey: "UserID") ?? "-")
     }
     
     func getMessage(){
-        
         viewModel.getMessages(receiverID: data?.userId ?? "-", senderID: UserDefaults.standard.string(forKey: "UserID") ?? "-") { result in
             if result != nil{
                 self.txtMsg.resignFirstResponder()
                 self.txtMsg.text = "Type Here"
                 self.txtMsg.textColor = UIColor.lightGray
                 self.tblView.reloadData()
+                
+                if self.isFirstCall == true{
+                    self.childRemove()
+                    self.isFirstCall = false
+                }
+               
+                
             }else{
                 self.view.makeToast("No data found!")
             }
@@ -65,20 +86,40 @@ class ChatVC: UIViewController {
     }
    
     func deleteMsg(firebaseKey: String, index: Int, indexPath: IndexPath){
-        
-        viewModel.deleteMessgae(receiverID: data?.userId ?? "-", senderID: UserDefaults.standard.string(forKey: "UserID") ?? "-", firebaseKey: firebaseKey, index: index) { result in
-            if result == "success"{
-               // self.tblView.reloadData()
-                self.tblView.deleteRows(at: [indexPath], with: .none)
-            }else{
-                self.view.makeToast("Please try again later!")
-            }
-        }
-
+    
+        self.viewModel.deleteMsg(receiverID: self.data?.userId ?? "-", senderID: UserDefaults.standard.string(forKey: "UserID") ?? "-", firebaseKey: firebaseKey, index: index)
     }
+    
+    func fileUploadMenu(){
+        let uploadImageMenu = UIAction(title: "Photos", identifier: nil) { _ in
+                    self.uploadImage()
+                }
+                let uploadFileMenu = UIAction(title: "Document", identifier: nil) { _ in
+                    //self.docControllorConfig()
+                }
+                let uploadMenus = UIMenu(title: "", image: nil, identifier: nil, children: [uploadImageMenu,uploadFileMenu])
+                self.btnFileUpload.menu = uploadMenus
+                self.btnFileUpload.showsMenuAsPrimaryAction = true
+    }
+    
+    func uploadImage(){
+        let myPickerController = UIImagePickerController()
+            myPickerController.delegate = self
+            myPickerController.sourceType =  UIImagePickerController.SourceType.photoLibrary
+            self.present(myPickerController, animated: true, completion: nil)
+        }
 }
+
+extension ChatVC: UIImagePickerControllerDelegate,UINavigationControllerDelegate{
+    func imagePickerController(_ picker: UIImagePickerController, didFinishPickingMediaWithInfo info: [UIImagePickerController.InfoKey : Any]) {
+            let docDir = try! FileManager.default.url(for: .documentDirectory, in: .userDomainMask, appropriateFor: nil, create: true)
+            self.dismiss(animated: true, completion: nil)
+        }
+}
+
 extension ChatVC: UITableViewDelegate, UITableViewDataSource{
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+        print("Array",viewModel.messages)
         return viewModel.messages.count
     }
     
@@ -99,9 +140,6 @@ extension ChatVC: UITableViewDelegate, UITableViewDataSource{
             cell.lbl.text = viewModel.messages[indexPath.row].Msg
             return cell
         }
-        
-        return UITableViewCell()
-       
     }
     
     func tableView(_ tableView: UITableView, contextMenuConfigurationForRowAt indexPath: IndexPath, point: CGPoint) -> UIContextMenuConfiguration? {
