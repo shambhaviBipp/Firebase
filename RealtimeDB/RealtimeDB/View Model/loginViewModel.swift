@@ -32,7 +32,7 @@ class loginViewModel{
                     completion("success")
                     return
                 }
-                 completion("error")
+                completion("error")
             }
         }else{
             UserDefaults.standard.set("\(id)ID", forKey: "UserID")
@@ -47,7 +47,7 @@ class loginViewModel{
                 return
             }
             if dict["userId"] != UserDefaults.standard.string(forKey: "UserID"){
-            
+                
                 self.users.append(Users(Name: dict["Name"] ?? "-", Email: dict["Email"] ?? "-", isOnline: dict["isOnline"] ?? "-", userId: dict["userId"] ?? "-"))
                 
                 completion(self.users)

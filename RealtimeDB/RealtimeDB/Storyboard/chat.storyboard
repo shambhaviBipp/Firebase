@@ -91,7 +91,6 @@
                                 <buttonConfiguration key="configuration" style="plain" image="filemenu.and.selection" catalog="system"/>
                                 <connections>
                                     <action selector="fileUpload:" destination="KUB-er-Q2H" eventType="touchUpInside" id="Tdk-h9-Ydl"/>
-                                    <action selector="send:" destination="KUB-er-Q2H" eventType="touchUpInside" id="JBP-jA-N7G"/>
                                 </connections>
                             </button>
                         </subviews>

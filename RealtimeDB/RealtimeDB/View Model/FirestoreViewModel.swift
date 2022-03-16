@@ -39,7 +39,7 @@ class FirestoreViewModel {
                 print("Error fetching document: \(error!)")
                 completion(nil)
                 return
-              }
+            }
             document.documentChanges.forEach { data in
                 if (data.type == .added) {
                     print("New data: \(data.document.data())")
@@ -50,13 +50,13 @@ class FirestoreViewModel {
                 }else if (data.type == .removed) {
                     print("Removed data: \(data.document.data())")
                 }
-                }
+            }
             completion(self.dataModel)
         }
     }
     
     
-
+    
     func getFireStoreData(record: String, completion: @escaping (_ result: [UsersData]?) -> Void){
         if record == "all"{
             db.collection("Data1").order(by: "Id").getDocuments() { (querySnapshot, err) in

@@ -60,7 +60,7 @@ class RealTimeDBViewModel {
                     }
                 }
             }
-
+            
         }
         
     }
@@ -78,6 +78,6 @@ class RealTimeDBViewModel {
         }
     }
     
- 
+    
     
 }

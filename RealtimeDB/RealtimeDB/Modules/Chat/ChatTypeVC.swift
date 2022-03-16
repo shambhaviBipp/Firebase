@@ -8,7 +8,7 @@
 import UIKit
 
 class ChatTypeVC: UIViewController {
-
+    
     @IBOutlet weak var tblView: UITableView!
     
     var viewModel = loginViewModel()
@@ -27,18 +27,18 @@ class ChatTypeVC: UIViewController {
         tblView.register(UINib(nibName: "usersCell" , bundle: nil), forCellReuseIdentifier: "usersCell")
     }
     
-//    @IBAction func Dhiraj(_ sender: Any) {
-//
-//        guard let vc =  UIStoryboard.init(name: "chat", bundle: Bundle.main).instantiateViewController(withIdentifier: "ChatVC") as? ChatVC else {return}
-//        vc.name = "Dhiraj"
-//        self.navigationController?.pushViewController(vc, animated: true)
-//    }
-//    @IBAction func Priya(_ sender: Any) {
-//
-//        guard let vc =  UIStoryboard.init(name: "chat", bundle: Bundle.main).instantiateViewController(withIdentifier: "ChatVC") as? ChatVC else {return}
-//        vc.name = "Priya"
-//        self.navigationController?.pushViewController(vc, animated: true)
-//    }
+    //    @IBAction func Dhiraj(_ sender: Any) {
+    //
+    //        guard let vc =  UIStoryboard.init(name: "chat", bundle: Bundle.main).instantiateViewController(withIdentifier: "ChatVC") as? ChatVC else {return}
+    //        vc.name = "Dhiraj"
+    //        self.navigationController?.pushViewController(vc, animated: true)
+    //    }
+    //    @IBAction func Priya(_ sender: Any) {
+    //
+    //        guard let vc =  UIStoryboard.init(name: "chat", bundle: Bundle.main).instantiateViewController(withIdentifier: "ChatVC") as? ChatVC else {return}
+    //        vc.name = "Priya"
+    //        self.navigationController?.pushViewController(vc, animated: true)
+    //    }
     
 }
 

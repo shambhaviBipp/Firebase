@@ -8,7 +8,7 @@
 import UIKit
 
 class DataVC: UIViewController {
-
+    
     @IBOutlet weak var btnSave: UIBarButtonItem!
     @IBOutlet weak var txtAddress: UITextField!
     @IBOutlet weak var txtMail: UITextField!
@@ -32,12 +32,12 @@ class DataVC: UIViewController {
             getRealTimeLister()
         }else if type == "firestore"{
             self.navigationItem.title = "Firestore"
-           // firestoreVM.getDataUsingListner()
-           // getfirestore(record: "all")
+            // firestoreVM.getDataUsingListner()
+            // getfirestore(record: "all")
             geFirestoreListner()
         }
     }
-
+    
     
     override func viewWillAppear(_ animated: Bool) {
         navigation()
@@ -47,33 +47,33 @@ class DataVC: UIViewController {
         tblView.register(UINib(nibName: "RTDataCell" , bundle: nil), forCellReuseIdentifier: "RTDataCell")
     }
     
-
+    
     @IBAction func save(_ sender: Any) {
         if txtName.text! == "" || txtAddress.text! == "" || txtMail.text == ""{
             self.view.makeToast("Please enter all fields!")
         }else{
             if type == "realtime"{
-                    startLoader()
-                    self.viewModel.saveData(name: self.txtName.text!, mail: self.txtMail.text!, address: self.txtAddress.text!) { result in
-                            if result == "suceess"{
-                                self.stopLoader()
-                                //self.getRealtimeData(record: "latest")
-                            }else{
-                                self.stopLoader()
-                                self.view.makeToast("Something went wrong! Please try again later!!")
-                            }
-                        }
-                }else if type == "firestore"{
-                    firestoreVM.addFirestoreData(name: txtName.text!, mail: txtMail.text!, address: txtAddress.text!) { result in
-                        if result == "success"{
-                            self.stopLoader()
-                            //self.getfirestore(record: "latest")
-                        }else{
-                            self.stopLoader()
-                            self.view.makeToast("Something went wrong! Please try again later!!")
-                        }
+                startLoader()
+                self.viewModel.saveData(name: self.txtName.text!, mail: self.txtMail.text!, address: self.txtAddress.text!) { result in
+                    if result == "suceess"{
+                        self.stopLoader()
+                        //self.getRealtimeData(record: "latest")
+                    }else{
+                        self.stopLoader()
+                        self.view.makeToast("Something went wrong! Please try again later!!")
                     }
                 }
+            }else if type == "firestore"{
+                firestoreVM.addFirestoreData(name: txtName.text!, mail: txtMail.text!, address: txtAddress.text!) { result in
+                    if result == "success"{
+                        self.stopLoader()
+                        //self.getfirestore(record: "latest")
+                    }else{
+                        self.stopLoader()
+                        self.view.makeToast("Something went wrong! Please try again later!!")
+                    }
+                }
+            }
         }
     }
     

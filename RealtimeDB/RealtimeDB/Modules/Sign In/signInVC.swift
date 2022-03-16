@@ -34,9 +34,9 @@ class signInVC: UIViewController {
         viewModel.getUsers(){ result in
         }
     }
-   
     
-
+    
+    
     @IBAction func login(_ sender: Any) {
         guard valid.isValidEmail(value: txtEmail.text!) else{
             self.view.makeToast("Please enter valid E-mail Id")

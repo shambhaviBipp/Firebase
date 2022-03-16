@@ -8,7 +8,7 @@
 import UIKit
 
 class DisplayRTDataVC: UIViewController {
-
+    
     @IBOutlet weak var tblView: UITableView!
     
     var dataModel = [UsersData]()
@@ -17,32 +17,32 @@ class DisplayRTDataVC: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         registerCell()
-     //   getData()
+        //   getData()
     }
     
     func registerCell(){
         tblView.register(UINib(nibName: "RTDataCell" , bundle: nil), forCellReuseIdentifier: "RTDataCell")
     }
     
-//    func getData(){
-//        self.viewModel.getData { result in
-//
-//            if result != nil{
-////                for data in result ?? []{
-////                    if let dict = data.value as? [String: String]{
-////                        self.dataModel.append(UsersData(name: dict["Name"] ?? "-", mail: dict["Email"] ?? "-", address: dict["Address"] ?? "-"))
-////                    }
-////                }
-//                self.tblView.isHidden = false
-//                self.tblView.reloadData()
-//            }else{
-//                self.tblView.isHidden = true
-//                self.view.makeToast("Data not found")
-//            }
-//
-//        }
-//    }
-
+    //    func getData(){
+    //        self.viewModel.getData { result in
+    //
+    //            if result != nil{
+    ////                for data in result ?? []{
+    ////                    if let dict = data.value as? [String: String]{
+    ////                        self.dataModel.append(UsersData(name: dict["Name"] ?? "-", mail: dict["Email"] ?? "-", address: dict["Address"] ?? "-"))
+    ////                    }
+    ////                }
+    //                self.tblView.isHidden = false
+    //                self.tblView.reloadData()
+    //            }else{
+    //                self.tblView.isHidden = true
+    //                self.view.makeToast("Data not found")
+    //            }
+    //
+    //        }
+    //    }
+    
 }
 
 extension DisplayRTDataVC: UITableViewDelegate, UITableViewDataSource{

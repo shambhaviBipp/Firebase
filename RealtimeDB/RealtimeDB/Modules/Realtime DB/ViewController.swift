@@ -14,7 +14,7 @@ class ViewController: UIViewController {
     @IBOutlet weak var btnSignOut: UIButton!
     @IBOutlet weak var btnFirestore: UIButton!
     @IBOutlet weak var btnLogin: UIButton!
-     
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         
@@ -38,7 +38,7 @@ class ViewController: UIViewController {
         self.navigationController?.pushViewController(vc, animated: true)
     }
     
-   
+    
     @IBAction func fireStore(_ sender: Any) {
         guard let vc =  UIStoryboard.init(name: "Main", bundle: Bundle.main).instantiateViewController(withIdentifier: "DataVC") as? DataVC else {return}
         vc.type = "firestore"
@@ -63,20 +63,20 @@ class ViewController: UIViewController {
     
     @IBAction func signOut(_ sender: Any) {
         let alert = UIAlertController(title: "Alert", message: "Do you really want to Logout?", preferredStyle: .alert)
-       
+        
         let yesAction = UIAlertAction(title: "YES", style: UIAlertAction.Style.default) {
-                UIAlertAction in
+            UIAlertAction in
             let  appdomain = Bundle.main.bundleIdentifier!
             UserDefaults.standard.removePersistentDomain(forName: appdomain)
             UserDefaults.standard.synchronize()
             self.btnSignOut.isHidden = true
             self.btnLogin.setTitle("Sign-In", for: .normal)
             self.btnLogin.isEnabled = true
-            }
+        }
         let noAction = UIAlertAction(title: "NO", style: UIAlertAction.Style.default) {
-                UIAlertAction in
+            UIAlertAction in
             alert.dismiss(animated: true, completion: nil)
-            }
+        }
         
         alert.addAction(noAction)
         alert.addAction(yesAction)
