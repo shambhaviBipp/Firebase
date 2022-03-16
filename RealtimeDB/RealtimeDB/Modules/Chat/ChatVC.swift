@@ -102,13 +102,14 @@ class ChatVC: UIViewController {
     }
     
     func getMessage(){
+        startLoader()
         viewModel.getMessages(receiverID: data?.userId ?? "-", senderID: UserDefaults.standard.string(forKey: "UserID") ?? "-") { result in
             if result != nil{
                 self.txtMsg.resignFirstResponder()
                 self.txtMsg.text = "Type Here"
                 self.txtMsg.textColor = UIColor.lightGray
                 self.tblView.reloadData()
-                
+                self.stopLoader()
                 if self.isFirstCall == true{
                     self.childRemove()
                     self.isFirstCall = false
@@ -116,6 +117,7 @@ class ChatVC: UIViewController {
                 
                 
             }else{
+                self.stopLoader()
                 self.view.makeToast("No data found!")
             }
         }
@@ -176,10 +178,11 @@ extension ChatVC: UIImagePickerControllerDelegate, UINavigationControllerDelegat
     
     func imagePickerController(_ picker: UIImagePickerController, didFinishPickingMediaWithInfo info: [UIImagePickerController.InfoKey : Any]) {
         
+        startLoader()
+        
         guard info[UIImagePickerController.InfoKey.mediaType] != nil else { return }
         let mediaType = info[UIImagePickerController.InfoKey.mediaType] as! String
         
-        print(mediaType)
         
         if mediaType == "public.movie"{
             guard let videoUrl = info[UIImagePickerController.InfoKey.mediaURL] as? NSURL else {return}
@@ -201,6 +204,8 @@ extension ChatVC: UIImagePickerControllerDelegate, UINavigationControllerDelegat
     }
     
     public func documentPicker(_ controller: UIDocumentPickerViewController, didPickDocumentsAt urls: [URL]) {
+        startLoader()
+        
         guard let myURL = urls.first else {
             return
         }
