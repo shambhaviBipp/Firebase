@@ -10,24 +10,24 @@
     <objects>
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
         <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
-        <tableViewCell contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" rowHeight="176" id="KGk-i7-Jjw" customClass="ReceiverMesssageCell" customModule="RealtimeDB" customModuleProvider="target">
-            <rect key="frame" x="0.0" y="0.0" width="320" height="176"/>
+        <tableViewCell contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" rowHeight="279" id="KGk-i7-Jjw" customClass="ReceiverMesssageCell" customModule="RealtimeDB" customModuleProvider="target">
+            <rect key="frame" x="0.0" y="0.0" width="466" height="279"/>
             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
             <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="KGk-i7-Jjw" id="H2p-sc-9uM">
-                <rect key="frame" x="0.0" y="0.0" width="320" height="176"/>
+                <rect key="frame" x="0.0" y="0.0" width="466" height="279"/>
                 <autoresizingMask key="autoresizingMask"/>
                 <subviews>
                     <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" translatesAutoresizingMaskIntoConstraints="NO" id="5r3-sq-QyU">
-                        <rect key="frame" x="0.0" y="0.0" width="320" height="176"/>
+                        <rect key="frame" x="0.0" y="0.0" width="466" height="279"/>
                         <subviews>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="90W-KZ-qrv">
-                                <rect key="frame" x="0.0" y="0.0" width="320" height="53"/>
+                                <rect key="frame" x="0.0" y="0.0" width="466" height="45"/>
                                 <subviews>
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="5Q4-J9-YAP" customClass="receiverMsgBox" customModule="RealtimeDB" customModuleProvider="target">
-                                        <rect key="frame" x="16" y="7" width="65.5" height="37.5"/>
+                                        <rect key="frame" x="16" y="7" width="65.5" height="29.5"/>
                                         <subviews>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" lineBreakMode="wordWrap" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="HLZ-o1-0Wk">
-                                                <rect key="frame" x="12" y="4" width="41.5" height="29.5"/>
+                                                <rect key="frame" x="12" y="4" width="41.5" height="21.5"/>
                                                 <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                                 <color key="textColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
@@ -53,7 +53,7 @@
                                 </constraints>
                             </view>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="6ra-HS-QSi">
-                                <rect key="frame" x="0.0" y="53" width="320" height="123"/>
+                                <rect key="frame" x="0.0" y="45" width="466" height="123"/>
                                 <subviews>
                                     <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="aND-CM-J4O">
                                         <rect key="frame" x="16" y="16" width="62" height="91"/>
@@ -71,6 +71,24 @@
                                     <constraint firstItem="aND-CM-J4O" firstAttribute="leading" secondItem="6ra-HS-QSi" secondAttribute="leading" constant="16" id="wOd-ZX-lZ9"/>
                                 </constraints>
                             </view>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="JYk-dG-tpK">
+                                <rect key="frame" x="0.0" y="168" width="466" height="111"/>
+                                <subviews>
+                                    <mapView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" mapType="standard" translatesAutoresizingMaskIntoConstraints="NO" id="rwW-wr-wb4">
+                                        <rect key="frame" x="16" y="16" width="150" height="79"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="79" id="EZ0-bn-7Sj"/>
+                                            <constraint firstAttribute="width" constant="150" id="tXS-D3-jhc"/>
+                                        </constraints>
+                                    </mapView>
+                                </subviews>
+                                <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                                <constraints>
+                                    <constraint firstItem="rwW-wr-wb4" firstAttribute="leading" secondItem="JYk-dG-tpK" secondAttribute="leading" constant="16" id="8kx-4K-V1z"/>
+                                    <constraint firstAttribute="bottom" secondItem="rwW-wr-wb4" secondAttribute="bottom" constant="16" id="Hav-Lu-I3q"/>
+                                    <constraint firstItem="rwW-wr-wb4" firstAttribute="top" secondItem="JYk-dG-tpK" secondAttribute="top" constant="16" id="nOj-YP-YLq"/>
+                                </constraints>
+                            </view>
                         </subviews>
                     </stackView>
                 </subviews>
@@ -86,10 +104,12 @@
                 <outlet property="img" destination="aND-CM-J4O" id="Sy0-Kn-cYv"/>
                 <outlet property="imgView" destination="6ra-HS-QSi" id="VLu-G6-Zgn"/>
                 <outlet property="lbl" destination="HLZ-o1-0Wk" id="06I-AW-REo"/>
+                <outlet property="map" destination="rwW-wr-wb4" id="jcP-1b-DS5"/>
+                <outlet property="mapView" destination="JYk-dG-tpK" id="vnu-Ix-3ZK"/>
                 <outlet property="msgStackView" destination="90W-KZ-qrv" id="68d-Fy-G7O"/>
                 <outlet property="msgView" destination="5Q4-J9-YAP" id="Koh-kQ-yfZ"/>
             </connections>
-            <point key="canvasLocation" x="134.78260869565219" y="136.60714285714286"/>
+            <point key="canvasLocation" x="220.28985507246378" y="170.42410714285714"/>
         </tableViewCell>
     </objects>
     <resources>

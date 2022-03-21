@@ -18,6 +18,8 @@ class ViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
+        self.view.makeToast("Toast")
+        
         if UserDefaults.standard.bool(forKey: "isLoggedIn") == true{
             let userID = UserDefaults.standard.string(forKey: "UserID")
             btnLogin.setTitle(userID, for: .normal)

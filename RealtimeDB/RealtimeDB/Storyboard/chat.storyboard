@@ -122,6 +122,99 @@
             </objects>
             <point key="canvasLocation" x="2985" y="52.816901408450704"/>
         </scene>
+        <!--Send Location-->
+        <scene sceneID="Vvg-ba-TCS">
+            <objects>
+                <viewController storyboardIdentifier="mapVC" useStoryboardIdentifierAsRestorationIdentifier="YES" id="ODv-PW-ZWF" customClass="mapVC" customModule="RealtimeDB" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="nhO-M1-ixa">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <mapView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" mapType="standard" translatesAutoresizingMaskIntoConstraints="NO" id="9EE-oS-Kdp">
+                                <rect key="frame" x="0.0" y="103" width="320" height="376"/>
+                            </mapView>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="3KB-e7-HVq">
+                                <rect key="frame" x="0.0" y="526" width="304" height="31"/>
+                                <state key="normal" title="Button"/>
+                                <buttonConfiguration key="configuration" style="plain" title="Send Location"/>
+                                <connections>
+                                    <action selector="sendLoc:" destination="ODv-PW-ZWF" eventType="touchUpInside" id="arh-gU-pbQ"/>
+                                </connections>
+                            </button>
+                            <segmentedControl opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="top" segmentControlStyle="plain" selectedSegmentIndex="0" translatesAutoresizingMaskIntoConstraints="NO" id="TmB-K7-dl2">
+                                <rect key="frame" x="0.0" y="487" width="320" height="32"/>
+                                <segments>
+                                    <segment title="Map"/>
+                                    <segment title="Hybrid"/>
+                                    <segment title="Satellite"/>
+                                </segments>
+                                <connections>
+                                    <action selector="segmentAction:" destination="ODv-PW-ZWF" eventType="valueChanged" id="rId-St-iGP"/>
+                                </connections>
+                            </segmentedControl>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="o9h-dI-H9p">
+                                <rect key="frame" x="280" y="120" width="24" height="24"/>
+                                <color key="backgroundColor" red="0.9888011174103648" green="0.9888011174103648" blue="0.9888011174103648" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="24" id="5sF-n1-cKL"/>
+                                    <constraint firstAttribute="height" constant="24" id="mj4-ji-GjM"/>
+                                </constraints>
+                                <state key="normal" title="Button"/>
+                                <buttonConfiguration key="configuration" style="plain" image="location.north" catalog="system"/>
+                                <connections>
+                                    <action selector="currentLoc:" destination="ODv-PW-ZWF" eventType="touchUpInside" id="ANz-AM-PSA"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Gy2-Fe-0Ul">
+                                <rect key="frame" x="148" y="279" width="24" height="24"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="24" id="9t3-3J-NfP"/>
+                                    <constraint firstAttribute="height" constant="24" id="eEv-gO-OLI"/>
+                                </constraints>
+                                <state key="normal" title="Button"/>
+                                <buttonConfiguration key="configuration" style="plain" image="mappin.and.ellipse" catalog="system"/>
+                            </button>
+                            <searchBar contentMode="redraw" translatesAutoresizingMaskIntoConstraints="NO" id="hMf-92-DtW">
+                                <rect key="frame" x="0.0" y="52" width="320" height="51"/>
+                                <textInputTraits key="textInputTraits"/>
+                            </searchBar>
+                        </subviews>
+                        <viewLayoutGuide key="safeArea" id="4J5-mK-jet"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <constraints>
+                            <constraint firstItem="Gy2-Fe-0Ul" firstAttribute="centerY" secondItem="9EE-oS-Kdp" secondAttribute="centerY" id="0zD-Oh-MEO"/>
+                            <constraint firstItem="4J5-mK-jet" firstAttribute="trailing" secondItem="9EE-oS-Kdp" secondAttribute="trailing" id="2Q9-cJ-MtW"/>
+                            <constraint firstItem="TmB-K7-dl2" firstAttribute="leading" secondItem="4J5-mK-jet" secondAttribute="leading" id="6Fr-Wn-lpP"/>
+                            <constraint firstItem="o9h-dI-H9p" firstAttribute="top" secondItem="hMf-92-DtW" secondAttribute="bottom" constant="17" id="8ss-mV-et3"/>
+                            <constraint firstItem="TmB-K7-dl2" firstAttribute="top" secondItem="9EE-oS-Kdp" secondAttribute="bottom" constant="8" symbolic="YES" id="GW4-91-Yz7"/>
+                            <constraint firstItem="3KB-e7-HVq" firstAttribute="top" secondItem="TmB-K7-dl2" secondAttribute="bottom" constant="8" symbolic="YES" id="IUM-ih-Jw8"/>
+                            <constraint firstItem="hMf-92-DtW" firstAttribute="leading" secondItem="4J5-mK-jet" secondAttribute="leading" id="LY1-D1-hKb"/>
+                            <constraint firstItem="3KB-e7-HVq" firstAttribute="leading" secondItem="4J5-mK-jet" secondAttribute="leading" id="MfH-Ec-kTK"/>
+                            <constraint firstItem="4J5-mK-jet" firstAttribute="trailing" secondItem="3KB-e7-HVq" secondAttribute="trailing" constant="16" id="PfX-DF-dUu"/>
+                            <constraint firstItem="Gy2-Fe-0Ul" firstAttribute="centerX" secondItem="9EE-oS-Kdp" secondAttribute="centerX" id="e3i-5r-UCI"/>
+                            <constraint firstItem="4J5-mK-jet" firstAttribute="trailing" secondItem="TmB-K7-dl2" secondAttribute="trailing" id="fYI-dd-SHC"/>
+                            <constraint firstItem="9EE-oS-Kdp" firstAttribute="leading" secondItem="4J5-mK-jet" secondAttribute="leading" id="frx-Ch-dgz"/>
+                            <constraint firstItem="4J5-mK-jet" firstAttribute="bottom" secondItem="3KB-e7-HVq" secondAttribute="bottom" constant="11" id="gV9-so-yuL"/>
+                            <constraint firstItem="9EE-oS-Kdp" firstAttribute="top" secondItem="hMf-92-DtW" secondAttribute="bottom" id="msA-VN-z81"/>
+                            <constraint firstItem="4J5-mK-jet" firstAttribute="trailing" secondItem="hMf-92-DtW" secondAttribute="trailing" id="w45-U6-KjC"/>
+                            <constraint firstItem="4J5-mK-jet" firstAttribute="trailing" secondItem="o9h-dI-H9p" secondAttribute="trailing" constant="16" id="zA9-GJ-Lwb"/>
+                            <constraint firstItem="hMf-92-DtW" firstAttribute="top" secondItem="4J5-mK-jet" secondAttribute="top" constant="8" id="zSB-tv-fQ6"/>
+                        </constraints>
+                    </view>
+                    <navigationItem key="navigationItem" title="Send Location" id="811-Ok-xnN"/>
+                    <connections>
+                        <outlet property="btnCurrentLoc" destination="o9h-dI-H9p" id="w55-sJ-1P8"/>
+                        <outlet property="btnFixedPin" destination="Gy2-Fe-0Ul" id="vXa-Dn-gUW"/>
+                        <outlet property="btnSendLoc" destination="3KB-e7-HVq" id="yDX-E4-PXw"/>
+                        <outlet property="map" destination="9EE-oS-Kdp" id="JyN-eI-wAw"/>
+                        <outlet property="searchBar" destination="hMf-92-DtW" id="e0i-YV-bk1"/>
+                        <outlet property="segment" destination="TmB-K7-dl2" id="k0C-6k-0lE"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="zKf-dM-pPI" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="5085" y="52.816901408450704"/>
+        </scene>
         <!--Navigation Controller-->
         <scene sceneID="aQW-Jg-b5t">
             <objects>
@@ -158,9 +251,29 @@
             </objects>
             <point key="canvasLocation" x="1987.5" y="52.816901408450704"/>
         </scene>
+        <!--Navigation Controller-->
+        <scene sceneID="mzv-9I-Ncc">
+            <objects>
+                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="cgo-c8-s3v" sceneMemberID="viewController">
+                    <toolbarItems/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="GG6-NO-OHO">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <nil name="viewControllers"/>
+                    <connections>
+                        <segue destination="ODv-PW-ZWF" kind="relationship" relationship="rootViewController" id="8Nc-OI-2ZE"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="Dv1-fx-FmC" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="4087.5" y="52.816901408450704"/>
+        </scene>
     </scenes>
     <resources>
         <image name="filemenu.and.selection" catalog="system" width="128" height="93"/>
+        <image name="location.north" catalog="system" width="108" height="128"/>
+        <image name="mappin.and.ellipse" catalog="system" width="118" height="128"/>
         <image name="send" width="32" height="32"/>
         <systemColor name="labelColor">
             <color white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>

@@ -9,9 +9,11 @@
 /* Begin PBXBuildFile section */
 		170B8D034DB41945C808AE6A /* Pods_RealtimeDB.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 2DB3560460EE29CC7864011E /* Pods_RealtimeDB.framework */; };
 		84100A3827D5DD1800381E89 /* MessageBox.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84100A3727D5DD1800381E89 /* MessageBox.swift */; };
+		8428580427E1F9FD009541EF /* mapVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8428580327E1F9FD009541EF /* mapVC.swift */; };
 		843C4B8C27D0FAA400428CBA /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 843C4B8B27D0FAA400428CBA /* GoogleService-Info.plist */; };
 		843C4B8F27D0FB7800428CBA /* ChatVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 843C4B8E27D0FB7800428CBA /* ChatVC.swift */; };
 		843C4B9127D0FB8C00428CBA /* ChatTypeVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 843C4B9027D0FB8C00428CBA /* ChatTypeVC.swift */; };
+		8456D21327E33711004CCF43 /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8456D21227E33711004CCF43 /* Constants.swift */; };
 		845BAFEF27D1D03C0058593A /* chatViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 845BAFEE27D1D03C0058593A /* chatViewModel.swift */; };
 		845BAFF527D1EC910058593A /* senderMessageCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 845BAFF327D1EC910058593A /* senderMessageCell.swift */; };
 		845BAFF627D1EC910058593A /* senderMessageCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 845BAFF427D1EC910058593A /* senderMessageCell.xib */; };
@@ -47,9 +49,11 @@
 		33B067498924EA42F7AE6084 /* Pods-RealtimeDB.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-RealtimeDB.debug.xcconfig"; path = "Target Support Files/Pods-RealtimeDB/Pods-RealtimeDB.debug.xcconfig"; sourceTree = "<group>"; };
 		8074383ECFFFBD7D46FE2E9C /* Pods-RealtimeDB.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-RealtimeDB.release.xcconfig"; path = "Target Support Files/Pods-RealtimeDB/Pods-RealtimeDB.release.xcconfig"; sourceTree = "<group>"; };
 		84100A3727D5DD1800381E89 /* MessageBox.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MessageBox.swift; sourceTree = "<group>"; };
+		8428580327E1F9FD009541EF /* mapVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = mapVC.swift; sourceTree = "<group>"; };
 		843C4B8B27D0FAA400428CBA /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 		843C4B8E27D0FB7800428CBA /* ChatVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChatVC.swift; sourceTree = "<group>"; };
 		843C4B9027D0FB8C00428CBA /* ChatTypeVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChatTypeVC.swift; sourceTree = "<group>"; };
+		8456D21227E33711004CCF43 /* Constants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
 		845BAFEE27D1D03C0058593A /* chatViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = chatViewModel.swift; sourceTree = "<group>"; };
 		845BAFF327D1EC910058593A /* senderMessageCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = senderMessageCell.swift; sourceTree = "<group>"; };
 		845BAFF427D1EC910058593A /* senderMessageCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = senderMessageCell.xib; sourceTree = "<group>"; };
@@ -111,6 +115,7 @@
 				845BAFF227D1EC6C0058593A /* Cell */,
 				843C4B8E27D0FB7800428CBA /* ChatVC.swift */,
 				843C4B9027D0FB8C00428CBA /* ChatTypeVC.swift */,
+				8428580327E1F9FD009541EF /* mapVC.swift */,
 			);
 			path = Chat;
 			sourceTree = "<group>";
@@ -186,6 +191,7 @@
 			children = (
 				84E6775527CE13ED003C00A7 /* AppDelegate.swift */,
 				84E6775727CE13ED003C00A7 /* SceneDelegate.swift */,
+				8456D21227E33711004CCF43 /* Constants.swift */,
 			);
 			path = Common;
 			sourceTree = "<group>";
@@ -409,6 +415,7 @@
 				84E6775627CE13ED003C00A7 /* AppDelegate.swift in Sources */,
 				84ACFCCA27D9F6600010CB19 /* loginViewModel.swift in Sources */,
 				8473074527D87D940036365C /* Navigation.swift in Sources */,
+				8428580427E1F9FD009541EF /* mapVC.swift in Sources */,
 				84AE626127CF82EC0050DDCA /* DataVC.swift in Sources */,
 				84ACFCC627D9DEB70010CB19 /* signInVC.swift in Sources */,
 				84100A3827D5DD1800381E89 /* MessageBox.swift in Sources */,
@@ -419,6 +426,7 @@
 				84E6778027CE21E8003C00A7 /* Users.swift in Sources */,
 				84AE625E27CF47690050DDCA /* UIVIewController.swift in Sources */,
 				845F6F0627CE62FE001DE267 /* RealTimeDBViewModel.swift in Sources */,
+				8456D21327E33711004CCF43 /* Constants.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

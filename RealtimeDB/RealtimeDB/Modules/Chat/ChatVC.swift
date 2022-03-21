@@ -6,6 +6,7 @@
 //
 
 import UIKit
+import MapKit
 import FirebaseFirestore
 import MobileCoreServices
 import UniformTypeIdentifiers
@@ -34,7 +35,6 @@ class ChatVC: UIViewController {
         txtHeightConstraint.constant = txtMsg.contentSize.height
         registerCell()
         getMessage()
-        //fileUploadMenu()
     }
     
     func childRemove(){
@@ -86,7 +86,7 @@ class ChatVC: UIViewController {
         alertController.addAction(action2)
         
         let image3 = UIImage(named: "location")
-        let action3 = UIAlertAction(title: "Location", style: .default, handler: nil)
+        let action3 = UIAlertAction(title: "Location", style: .default, handler: shareLocation)
         action3.setValue(image3, forKey: "image")
         action3.setValue(0, forKey: "titleTextAlignment")
         alertController.addAction(action3)
@@ -109,13 +109,12 @@ class ChatVC: UIViewController {
                 self.txtMsg.text = "Type Here"
                 self.txtMsg.textColor = UIColor.lightGray
                 self.tblView.reloadData()
+                self.moveToLast()
                 self.stopLoader()
                 if self.isFirstCall == true{
                     self.childRemove()
                     self.isFirstCall = false
                 }
-                
-                
             }else{
                 self.stopLoader()
                 self.view.makeToast("No data found!")
@@ -123,22 +122,15 @@ class ChatVC: UIViewController {
         }
     }
     
+    func moveToLast(){
+        let lastRow = viewModel.messages.count - 1
+        self.tblView.scrollToRow(at: IndexPath(row: lastRow, section: 0), at: .bottom, animated: true)
+    }
     func deleteMsg(firebaseKey: String, index: Int, indexPath: IndexPath){
         
         self.viewModel.deleteMsg(receiverID: self.data?.userId ?? "-", senderID: UserDefaults.standard.string(forKey: "UserID") ?? "-", firebaseKey: firebaseKey, index: index)
     }
     
-    //    func fileUploadMenu(){
-    //        let uploadImageMenu = UIAction(title: "Photos", identifier: nil) { _ in
-    //            self.uploadImage()
-    //        }
-    //        let uploadFileMenu = UIAction(title: "Document", identifier: nil) { _ in
-    //            self.uploadFile()
-    //        }
-    //        let uploadMenus = UIMenu(title: "", image: nil, identifier: nil, children: [uploadImageMenu,uploadFileMenu])
-    //        self.btnFileUpload.menu = uploadMenus
-    //        self.btnFileUpload.showsMenuAsPrimaryAction = true
-    //    }
     
     func uploadFile(_ action: UIAlertAction){
         let documentPickerController = UIDocumentPickerViewController(documentTypes: ["public.text", "com.apple.iwork.pages.pages", "public.data"], in: .import)
@@ -160,6 +152,13 @@ class ChatVC: UIViewController {
         myPickerController.delegate = self
         myPickerController.sourceType =  UIImagePickerController.SourceType.camera
         self.present(myPickerController, animated: true, completion: nil)
+    }
+    
+    func shareLocation(_ action: UIAlertAction){
+        guard let vc =  UIStoryboard.init(name: "chat", bundle: Bundle.main).instantiateViewController(withIdentifier: "mapVC") as? mapVC else {return}
+        vc.data = self.data
+        vc.type = Constants.Sender
+        self.navigationController?.pushViewController(vc, animated: true)
     }
     
     
@@ -252,12 +251,14 @@ extension ChatVC: UITableViewDelegate, UITableViewDataSource{
         if viewModel.messages[indexPath.row].senderID == UserDefaults.standard.string(forKey: "UserID") ?? "-"{
             guard let cell = tblView.dequeueReusableCell(withIdentifier: "senderMessageCell") as? senderMessageCell else {return UITableViewCell()}
             cell.selectedBackgroundView = backgroundSelectionView
+            cell.delegate = self
             cell.bindData(Messages: viewModel.messages[indexPath.row])
             //cell.lbl.text = viewModel.messages[indexPath.row].Msg
             return cell
         }else{
             guard let cell = tblView.dequeueReusableCell(withIdentifier: "ReceiverMesssageCell") as? ReceiverMesssageCell else {return UITableViewCell()}
             cell.selectedBackgroundView = backgroundSelectionView
+            cell.delegate = self
             cell.bindData(Messages: viewModel.messages[indexPath.row])
             //cell.lbl.text = viewModel.messages[indexPath.row].Msg
             return cell
@@ -323,5 +324,16 @@ extension ChatVC: UITextViewDelegate{
             textView.textColor = UIColor.lightGray
         }
     }
+    
+}
+
+extension ChatVC: openMapProtocol{
+    func openMap(coordinates: CLLocationCoordinate2D) {
+        guard let vc =  UIStoryboard.init(name: "chat", bundle: Bundle.main).instantiateViewController(withIdentifier: "mapVC") as? mapVC else {return}
+        vc.type = Constants.Receiver
+        vc.coordinates = coordinates
+        self.navigationController?.pushViewController(vc, animated: true)
+    }
+    
     
 }
